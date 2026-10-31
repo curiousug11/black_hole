@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from accretion_disk import ThinDisk, constants as C, eddington_luminosity  # noqa: E402
+from accretion_disk import ThinDisk, constants as C, eddington_luminosity, planck_nu  # noqa: E402
 
 FIG_DIR = ROOT / "figures"
 RES_DIR = ROOT / "results"
@@ -314,6 +314,30 @@ def fig_convergence():
     plt.close(fig)
 
 
+def fig_ring_decomposition():
+    """Show how individual blackbody zones add up to the disk spectrum."""
+    d = ThinDisk.from_eddington(STELLAR["mass"], EDD_RATIO)
+    nu = np.geomspace(1e13, 3e18, 1500)
+    radii, T, A = d.ring_radii, d.ring_temperatures, d.ring_areas
+    zones = np.array_split(np.arange(d.n_rings), 8)
+    colors = plt.cm.Blues_r(np.linspace(0.05, 0.7, len(zones)))  # dark = hot inner zone
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    for j, (idx, color) in enumerate(zip(zones, colors)):
+        Lz = 2 * np.pi * planck_nu(nu[:, None], T[None, idx]) @ A[idx]
+        label = (f"{radii[idx[0]] / d.r_g:,.0f}–{radii[idx[-1]] / d.r_g:,.0f} GM/c$^2$"
+                 if j in (0, 3, 7) else None)
+        ax.loglog(nu, nu * Lz, lw=1.2, color=color, label=label)
+    ax.loglog(nu, nu * d.luminosity_nu(nu), color=INK, lw=2.4, label="sum over all rings")
+    ax.set_ylim(1e32, 3e38)
+    ax.set_xlabel(r"Frequency $\nu$ [Hz]")
+    ax.set_ylabel(r"$\nu L_\nu$ [erg s$^{-1}$]")
+    ax.set_title(f"Ring decomposition, {fmt_mass(STELLAR['mass'])}, "
+                 f"L/L$_{{Edd}}$ = {EDD_RATIO}", loc="left")
+    ax.legend(title="ring zone (8 zones of 250 rings)", loc="upper left", fontsize=8.5)
+    fig.savefig(FIG_DIR / "fig8_ring_decomposition.png")
+    plt.close(fig)
+
+
 # ---------------------------------------------------------------------------
 # Tables
 # ---------------------------------------------------------------------------
@@ -378,6 +402,7 @@ def main():
     fig_scalings()
     fig_observed_flux()
     fig_convergence()
+    fig_ring_decomposition()
     print(write_tables(summary_rows()))
     print(f"\nFigures written to {FIG_DIR}\nTables written to {RES_DIR}")
 

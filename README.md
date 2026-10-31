@@ -14,6 +14,9 @@ scripts/
   run_analysis.py    Parameter study: writes every figure and table
 notebooks/
   accretion_disk_walkthrough.ipynb   Step-by-step walkthrough of the analysis
+report/
+  report.tex         LaTeX report (with references.bib)
+  report.pdf         Compiled report
 tests/test_disk.py   Physics and numerical checks (pytest)
 figures/             Generated figures (PNG)
 results/             Generated summary tables (CSV and Markdown)
@@ -26,6 +29,7 @@ pip install -r requirements.txt
 python -m pytest              # 18 tests, about 3 s
 python scripts/run_analysis.py  # regenerates figures/ and results/, about 1 min
 jupyter lab notebooks/accretion_disk_walkthrough.ipynb   # guided walkthrough
+cd report && latexmk -pdf report.tex                     # rebuild the report PDF
 ```
 
 The notebook is committed with its outputs, so it can be read on GitHub

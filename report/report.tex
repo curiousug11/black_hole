@@ -1,0 +1,612 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\graphicspath{{../figures/}}
+\sisetup{separate-uncertainty, per-mode=symbol, exponent-product=\times}
+\DeclareSIUnit{\angstrom}{\text{\AA}}
+\captionsetup{font=small,labelfont=bf}
+
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Mdot}{\dot M}
+\newcommand{\LEdd}{L_{\mathrm{Edd}}}
+\newcommand{\rin}{r_{\mathrm{in}}}
+\newcommand{\rout}{r_{\mathrm{out}}}
+\newcommand{\Tmax}{T_{\max}}
+\newcommand{\nupk}{\nu_{\mathrm{peak}}}
+\newcommand{\rg}{r_{g}}
+
+\title{\textbf{Thermal Emission from Geometrically Thin Accretion Disks:\\
+The Role of Black Hole Mass and Accretion Rate}}
+\author{\textit{[Author name(s)]}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We investigate how black hole mass and accretion rate shape the thermal
+continuum of a geometrically thin, optically thick accretion disk. The disk is
+modelled as a set of concentric rings, each radiating as a blackbody at the
+local effective temperature of the steady Newtonian thin-disk solution with a
+zero-torque inner boundary at the Schwarzschild innermost stable circular
+orbit. The emission of all rings is summed numerically to obtain the
+specific luminosity $L_\nu$ and the flux $F_\nu$ received by an observer at a
+given distance and inclination. The numerical scheme reproduces the analytic
+bolometric luminosity to a fractional accuracy of $5\times10^{-6}$ and
+converges as $N^{-2}$ in the number of rings. At a fixed Eddington ratio
+$L/\LEdd=0.1$, a $10\,\Msun$ black hole has a maximum disk temperature of
+$\Tmax=\SI{4.4e6}{K}$ and a spectral peak at $\approx\SI{0.94}{keV}$ (soft
+X-rays), while a $10^8\,\Msun$ black hole has $\Tmax=\SI{7.9e4}{K}$ and peaks
+at $\approx\SI{740}{\angstrom}$ (far ultraviolet). The two peaks differ by
+exactly $(10^7)^{1/4}\approx56$, reflecting the scaling
+$\Tmax\propto(\Mdot/M^2)^{1/4}$. The bolometric luminosity depends only on the
+accretion rate, $L=\Mdot c^2/12$, so the luminosity and the spectral peak
+together determine both $\Mdot$ and $M$. We discuss the limitations imposed by
+neglecting general-relativistic effects, non-blackbody radiative transfer and
+additional emission components.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ===========================================================================
+\section{Introduction}
+% ===========================================================================
+
+Accretion onto black holes is among the most efficient ways of converting
+rest-mass energy into radiation. Black holes span more than eight orders of
+magnitude in mass, from stellar-mass objects of
+$\sim5$--$20\,\Msun$ in X-ray binaries to supermassive black holes of
+$10^6$--$10^{10}\,\Msun$ in active galactic nuclei (AGN). Despite this range,
+the same basic physics is thought to operate in both: gas with angular
+momentum settles into a disk, viscous stresses transport angular momentum
+outward and allow the gas to spiral inward, and the gravitational energy
+released is radiated from the disk surface.
+
+The standard model for this process is the geometrically thin, optically
+thick disk of \citet{ShakuraSunyaev1973}, reviewed by \citet{Pringle1981} and
+\citet{FrankKingRaine2002}. Because the disk is optically thick, each annulus
+radiates approximately as a blackbody, and because the temperature falls with
+radius, the total spectrum is a superposition of blackbodies with a range of
+temperatures. This ``multi-colour disk'' spectrum is used to describe the
+thermal component of X-ray binaries in their soft state
+\citep{Mitsuda1984,RemillardMcClintock2006} and the ``big blue bump'' seen in
+the optical--ultraviolet spectra of quasars \citep{Shields1978,Malkan1983}.
+
+In this project we implement this model numerically and ask three
+questions:
+\begin{enumerate}
+  \item How do the black hole mass $M$ and accretion rate $\Mdot$ set the
+        disk temperature, the spectral peak and the total luminosity?
+  \item What flux would an observer at a given distance and inclination
+        measure?
+  \item Why does the same physical model put the emission of stellar-mass
+        black holes in the X-ray band and that of supermassive black holes
+        in the ultraviolet?
+\end{enumerate}
+Section~\ref{sec:theory} summarises the physical model,
+Section~\ref{sec:method} describes the numerical method and its validation,
+Section~\ref{sec:results} presents the results, and
+Section~\ref{sec:discussion} connects them to observables and discusses the
+limitations of the model.
+
+% ===========================================================================
+\section{Physical model}\label{sec:theory}
+% ===========================================================================
+
+\subsection{Assumptions}
+We consider a steady, axisymmetric disk around a non-rotating black hole of
+mass $M$ accreting at a constant rate $\Mdot$. The disk is assumed to be
+\begin{itemize}
+  \item \emph{geometrically thin}, $H/r\ll1$, so that it can be treated as a
+        flat surface and radial pressure support is negligible;
+  \item \emph{optically thick}, so that each surface element radiates as a
+        blackbody at its local effective temperature;
+  \item \emph{Keplerian and Newtonian}, with the inner edge at the innermost
+        stable circular orbit (ISCO) of a Schwarzschild black hole,
+        $\rin=6\rg$, where $\rg=GM/c^2$ is the gravitational radius.
+\end{itemize}
+Unless stated otherwise the outer radius is $\rout=10^5\rg$.
+
+\subsection{Radial temperature profile}
+Conservation of mass and angular momentum in a steady thin disk, together
+with the assumption that the viscous torque vanishes at $\rin$, gives the
+rate of energy dissipation per unit area of each face
+\citep{ShakuraSunyaev1973,FrankKingRaine2002}:
+\begin{equation}
+  D(r)=\frac{3GM\Mdot}{8\pi r^3}\left[1-\left(\frac{\rin}{r}\right)^{1/2}\right].
+\end{equation}
+In local thermal equilibrium this energy is radiated as a blackbody, so
+$\sigma T^4(r)=D(r)$ and
+\begin{equation}
+  T(r)=T_*\left(\frac{\rin}{r}\right)^{3/4}\left[1-\left(\frac{\rin}{r}\right)^{1/2}\right]^{1/4},
+  \qquad
+  T_*=\left(\frac{3GM\Mdot}{8\pi\sigma\rin^3}\right)^{1/4}.
+  \label{eq:Tr}
+\end{equation}
+Far from the inner edge $T\propto r^{-3/4}$. The temperature vanishes at
+$\rin$ and reaches its maximum at $r=\tfrac{49}{36}\rin$, where
+\begin{equation}
+  \Tmax=\left[\frac{(36/49)^3}{7}\right]^{1/4}T_*\approx0.488\,T_*.
+\end{equation}
+Because $\rin\propto M$, the temperature scale obeys
+\begin{equation}
+  \Tmax\propto\left(\frac{\Mdot}{M^2}\right)^{1/4}.
+  \label{eq:Tscaling}
+\end{equation}
+
+\subsection{Luminosity and the Eddington limit}
+Integrating $2D(r)$ over both faces from $\rin$ to $\rout$ gives the exact
+bolometric luminosity. With $X=\rout/\rin$,
+\begin{equation}
+  L=\frac{3GM\Mdot}{2\rin}\left[\left(1-\frac{1}{X}\right)-\frac{2}{3}\left(1-X^{-3/2}\right)\right]
+  \;\xrightarrow{X\to\infty}\;\frac{GM\Mdot}{2\rin}=\frac{\Mdot c^2}{12}.
+  \label{eq:Lanalytic}
+\end{equation}
+The radiative efficiency of this Newtonian model is therefore $\eta=1/12$,
+and the luminosity depends on $\Mdot$ alone. We parametrise the accretion
+rate through the Eddington ratio $\lambda=L/\LEdd$, where
+\begin{equation}
+  \LEdd=\frac{4\pi GMm_pc}{\sigma_T}\approx\SI{1.26e38}{erg.s^{-1}}\left(\frac{M}{\Msun}\right)
+\end{equation}
+is the luminosity at which radiation pressure on electrons balances gravity
+for ionised hydrogen. The accretion rate is then
+$\Mdot=\lambda\LEdd/(\eta c^2)$; for a $10\,\Msun$ black hole at
+$\lambda=1$ this is $\Mdot=\SI{1.68e19}{g.s^{-1}}=2.7\times10^{-7}\,\Msun\,\mathrm{yr}^{-1}$.
+At fixed $\lambda$, $\Mdot\propto M$, so Eq.~\eqref{eq:Tscaling} gives
+$\Tmax\propto M^{-1/4}$: \emph{more massive black holes have cooler disks}.
+
+\subsection{Spectrum}
+Each annulus of area $dA=2\pi r\,dr$ per face emits isotropically with
+specific intensity $B_\nu(T)$, the Planck function \citep{RybickiLightman1979}
+\begin{equation}
+  B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT}-1}.
+\end{equation}
+The specific luminosity emitted from both faces is
+\begin{equation}
+  L_\nu=2\int_{\rin}^{\rout}\pi B_\nu\bigl(T(r)\bigr)\,2\pi r\,dr.
+  \label{eq:Lnu}
+\end{equation}
+An observer at distance $D$ who views the disk at inclination $i$ (with
+$i=0$ face-on) sees a projected area $dA\cos i$, so the received flux
+density is
+\begin{equation}
+  F_\nu=\frac{\cos i}{D^2}\int_{\rin}^{\rout}B_\nu\bigl(T(r)\bigr)\,2\pi r\,dr
+       =\frac{\cos i}{2\pi D^2}\,L_\nu .
+  \label{eq:Fnu}
+\end{equation}
+
+The spectrum has three regimes. For $h\nu\ll kT(\rout)$ every annulus is in
+the Rayleigh--Jeans limit and $L_\nu\propto\nu^2$. For $h\nu\gg k\Tmax$ the
+spectrum is cut off exponentially, as in the Wien tail. In between, the
+substitution $x=h\nu/kT(r)$ with $T\propto r^{-3/4}$ gives
+$r\propto x^{4/3}\nu^{-4/3}$, and Eq.~\eqref{eq:Lnu} becomes
+\begin{equation}
+  L_\nu\propto\nu^3\int\frac{r\,dr}{e^x-1}\propto\nu^3\,\nu^{-8/3}\int\frac{x^{5/3}\,dx}{e^x-1}\propto\nu^{1/3},
+\end{equation}
+the characteristic signature of a multi-temperature disk.
+
+% ===========================================================================
+\section{Numerical method}\label{sec:method}
+% ===========================================================================
+
+\subsection{Ring discretisation}
+The model is implemented in Python (\texttt{accretion\_disk/disk.py}) using
+NumPy, in CGS units throughout. The disk is divided into $N$ rings whose
+edges $r_0=\rin<r_1<\dots<r_N=\rout$ are logarithmically spaced, so every
+decade in radius receives equal resolution. Ring $k$ is assigned the
+temperature $T_k=T(\bar r_k)$ at its geometric-mean radius
+$\bar r_k=\sqrt{r_kr_{k+1}}$ and the one-face area
+$A_k=\pi(r_{k+1}^2-r_k^2)$. Equations~\eqref{eq:Lnu} and~\eqref{eq:Fnu}
+become sums over rings,
+\begin{equation}
+  L_\nu=2\pi\sum_{k=0}^{N-1}B_\nu(T_k)\,A_k,\qquad
+  F_\nu=\frac{\cos i}{D^2}\sum_{k=0}^{N-1}B_\nu(T_k)\,A_k ,
+  \label{eq:ringsum}
+\end{equation}
+which are evaluated for all frequencies at once as a matrix--vector product.
+The default is $N=2000$. The Planck function is evaluated with
+\texttt{expm1} for accuracy at small $h\nu/kT$, and is set to zero for
+$h\nu/kT>700$ to avoid floating-point overflow in the Wien tail.
+
+Figure~\ref{fig:rings} illustrates the method: grouping the 2000 rings into
+eight zones shows that each zone contributes a nearly blackbody spectrum,
+while their sum is the broad multi-temperature disk spectrum.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{fig8_ring_decomposition.png}
+  \caption{Decomposition of the disk spectrum of a $10\,\Msun$ black hole at
+  $\lambda=0.1$. Coloured curves show the summed emission of eight zones of
+  250 rings each, from the hot inner zone (dark) to the cool outer zone
+  (light); the black curve is the total. Each zone is close to a blackbody,
+  but the total is much broader.}
+  \label{fig:rings}
+\end{figure}
+
+\subsection{Derived quantities}
+The bolometric luminosity is computed directly from the rings as
+$L=2\sigma\sum_kT_k^4A_k$. The peak frequency $\nupk$ of $\nu L_\nu$ is found
+on a logarithmic grid of 4000 frequencies spanning $10^{-5}$ to $40$ times
+$k\Tmax/h$; the grid maximum is refined by fitting a parabola to the three
+neighbouring points in $\log\nu$--$\log(\nu L_\nu)$ space. Scaling the grid
+with $\Tmax$ gives the same relative resolution for every mass and
+accretion rate.
+
+\subsection{Validation}
+The implementation is checked by an automated test suite
+(\texttt{tests/test\_disk.py}, 18 tests). Table~\ref{tab:validation}
+summarises the main checks against analytic results.
+
+\begin{table}[H]
+  \centering
+  \caption{Validation of the numerical model against analytic results.}
+  \label{tab:validation}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    Check & Result \\
+    \midrule
+    $\pi\int B_\nu\,d\nu=\sigma T^4$ & agrees to $<10^{-4}$ \\
+    Ring sum of $\sigma T^4$ vs.\ Eq.~\eqref{eq:Lanalytic} & $5.4\times10^{-6}$ ($N=2000$) \\
+    $\int L_\nu\,d\nu$ vs.\ Eq.~\eqref{eq:Lanalytic} & $9.5\times10^{-6}$ \\
+    Location and value of $\Tmax$ & $r=\tfrac{49}{36}\rin$, $\Tmax=0.488\,T_*$ \\
+    Low-frequency slope & $L_\nu\propto\nu^{2.00}$ \\
+    Intermediate slope ($\rout=10^8\rg$) & $L_\nu\propto\nu^{0.33}$ \\
+    Mass scaling at fixed $\lambda$ & $\nupk\propto M^{-0.2500}$ \\
+    Accretion-rate scaling at fixed $M$ & $\nupk\propto\Mdot^{0.2500}$, $L\propto\Mdot^{1.000}$ \\
+    Observer geometry & $F_\nu\propto\cos i/D^2$, face-on $F_\nu=L_\nu/2\pi D^2$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Figure~\ref{fig:convergence} shows the convergence of the ring sum. The
+error in the bolometric luminosity falls as $N^{-2}$, as expected for a
+midpoint-type rule; about 100 rings give \SI{0.2}{\percent} accuracy, and
+the default of 2000 rings gives errors well below $10^{-5}$, negligible
+compared with the physical uncertainties of the model.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.62\textwidth]{fig7_convergence.png}
+  \caption{Fractional error of the bolometric luminosity (relative to
+  Eq.~\ref{eq:Lanalytic}) and of the peak frequency (relative to a
+  40\,000-ring calculation) as a function of the number of rings $N$.}
+  \label{fig:convergence}
+\end{figure}
+
+% ===========================================================================
+\section{Results}\label{sec:results}
+% ===========================================================================
+
+We adopt two representative systems, both accreting at $\lambda=0.1$:
+\begin{itemize}
+  \item a \textbf{stellar-mass black hole} of $10\,\Msun$ at
+        $D=\SI{8}{kpc}$ viewed at $i=\ang{60}$, typical of a Galactic X-ray
+        binary;
+  \item a \textbf{supermassive black hole} of $10^8\,\Msun$ at
+        $D=\SI{100}{Mpc}$ viewed at $i=\ang{30}$, typical of a Seyfert
+        nucleus or quasar.
+\end{itemize}
+Their properties at three Eddington ratios are listed in
+Table~\ref{tab:summary}.
+
+\begin{table}[H]
+  \centering
+  \caption{Disk properties of the representative systems. $\nupk$ and
+  $E_{\mathrm{peak}}=h\nupk$ refer to the peak of $\nu L_\nu$;
+  $F_{\mathrm{bol}}$ is the bolometric flux at the stated distance and
+  inclination ($D=\SI{8}{kpc}$, $i=\ang{60}$ for $10\,\Msun$;
+  $D=\SI{100}{Mpc}$, $i=\ang{30}$ for $10^8\,\Msun$).}
+  \label{tab:summary}
+  \small
+  \begin{tabular}{@{}lccccccc@{}}
+    \toprule
+    $M$ & $L/\LEdd$ & $\Mdot$ & $L_{\mathrm{bol}}$ & $\Tmax$ & $\nupk$ & $E_{\mathrm{peak}}$ & $F_{\mathrm{bol}}$ \\
+    $[\Msun]$ & & [$\Msun\,\mathrm{yr}^{-1}$] & [erg\,s$^{-1}$] & [K] & [Hz] & [keV] & [erg\,s$^{-1}$\,cm$^{-2}$] \\
+    \midrule
+    10 & 0.01 & \num{2.7e-9} & \num{1.26e37} & \num{2.49e6} & \num{1.28e17} & 0.53 & \num{1.6e-9} \\
+    10 & 0.1  & \num{2.7e-8} & \num{1.26e38} & \num{4.42e6} & \num{2.27e17} & 0.94 & \num{1.6e-8} \\
+    10 & 1    & \num{2.7e-7} & \num{1.26e39} & \num{7.86e6} & \num{4.04e17} & 1.67 & \num{1.6e-7} \\
+    \midrule
+    $10^8$ & 0.01 & \num{2.7e-2} & \num{1.26e44} & \num{4.42e4} & \num{2.27e15} & 0.0094 & \num{1.8e-10} \\
+    $10^8$ & 0.1  & \num{2.7e-1} & \num{1.26e45} & \num{7.86e4} & \num{4.04e15} & 0.0167 & \num{1.8e-9} \\
+    $10^8$ & 1    & \num{2.7}    & \num{1.26e46} & \num{1.40e5} & \num{7.18e15} & 0.0297 & \num{1.8e-8} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Temperature structure}
+Figure~\ref{fig:Tprofile} shows the temperature profiles of the two systems.
+Expressed in units of $\rg$, the profiles have identical shapes: a steep rise
+from zero at the ISCO, a maximum at $8.2\,\rg$, and a $T\propto r^{-3/4}$
+decline. Only the normalisation differs. The inner disk of the
+$10\,\Msun$ black hole reaches $\SI{4.4e6}{K}$, while that of the
+$10^8\,\Msun$ black hole reaches only $\SI{7.9e4}{K}$, even though it
+radiates $10^7$ times more power. The ratio of the two temperatures is
+exactly $(10^7)^{1/4}=56.2$, as required by Eq.~\eqref{eq:Tscaling}. The
+supermassive disk can be cooler because its emitting area, $\propto M^2$,
+is $10^{14}$ times larger. The zero-torque boundary condition lowers the
+temperature at the maximum by a factor of $7^{1/4}\approx1.6$ relative to
+the pure power law (dotted lines), and drives it to zero at $\rin$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{fig1_temperature_profiles.png}
+  \caption{Effective temperature as a function of radius for a $10\,\Msun$
+  and a $10^8\,\Msun$ black hole at $\lambda=0.1$. Dots mark $\Tmax$ at
+  $r=\tfrac{49}{36}\rin$; dotted lines show the $T\propto r^{-3/4}$ power law
+  without the inner-boundary factor.}
+  \label{fig:Tprofile}
+\end{figure}
+
+\subsection{Stellar-mass versus supermassive black holes}
+Figure~\ref{fig:compare} compares the spectra. The $10\,\Msun$ disk peaks at
+$\nupk=\SI{2.27e17}{Hz}$ ($E\approx\SI{0.94}{keV}$), in the soft X-ray band,
+which matches the thermal disk component observed in black hole X-ray
+binaries in their high/soft state \citep{RemillardMcClintock2006}. The
+$10^8\,\Msun$ disk peaks at $\nupk=\SI{4.04e15}{Hz}$
+($\lambda\approx\SI{740}{\angstrom}$), in the far ultraviolet, consistent with
+the big blue bump in quasar spectra \citep{Shields1978,Malkan1983}.
+
+The spectral \emph{shape} is the same in both cases when frequency is
+expressed in units of $k\Tmax/h$: we find $h\nupk=2.466\,k\Tmax$ for the peak
+of $\nu L_\nu$ and $h\nu=0.80\,k\Tmax$ for the peak of $L_\nu$, independent
+of $M$ and $\Mdot$. The single model therefore produces characteristic
+frequencies that differ by a factor of 56 simply because $\Tmax\propto
+M^{-1/4}$ at fixed Eddington ratio. Both spectra show the three regimes of
+Section~\ref{sec:theory}: a Rayleigh--Jeans $\nu^2$ tail below the
+temperature of the outer edge ($T(\rout)\approx\SI{6200}{K}$ for the stellar
+disk and $\approx\SI{110}{K}$ for the supermassive disk), a $\nu^{1/3}$
+section ($\nu L_\nu\propto\nu^{4/3}$) at intermediate frequencies, and a Wien
+cutoff above $\nupk$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig2_spectra_stellar_vs_smbh.png}
+  \caption{Spectral energy distributions $\nu L_\nu$ of the $10\,\Msun$ and
+  $10^8\,\Msun$ disks at $\lambda=0.1$. Shaded bands mark the IR and UV
+  regions; the top axis gives the photon energy.}
+  \label{fig:compare}
+\end{figure}
+
+\subsection{Dependence on black hole mass}
+Figure~\ref{fig:mass} shows a sequence of masses from $10$ to $10^9\,\Msun$ at
+fixed $\lambda=0.1$. Increasing the mass raises the luminosity in proportion
+($L\propto\Mdot\propto M$) and moves the peak to lower frequency, so the
+peaks lie along the locus $\nu L_\nu\propto\nupk^{-4}$ (dashed line). A
+power-law fit to the peak frequencies gives a slope of $-0.2500$, in exact
+agreement with $\nupk\propto M^{-1/4}$. Over this mass range the peak moves
+from the X-ray band, through the extreme ultraviolet, into the far
+ultraviolet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig3_vary_mass.png}
+  \caption{Disk spectra for black hole masses of $10$, $10^3$, $10^5$, $10^7$
+  and $10^9\,\Msun$ at $\lambda=0.1$. Dots mark the peak of each spectrum;
+  the dashed line traces the peak locus.}
+  \label{fig:mass}
+\end{figure}
+
+\subsection{Dependence on accretion rate}
+Figure~\ref{fig:mdot} shows the effect of varying the accretion rate from
+$\lambda=0.01$ to $1$ at fixed mass. The luminosity increases in proportion
+to $\Mdot$, but the peak moves only as $\Mdot^{1/4}$: a hundredfold increase
+in accretion rate shifts $\nupk$ by a factor of only $100^{1/4}\approx3.2$
+(from 0.53 to \SI{1.67}{keV} for the stellar-mass disk). In the
+$\nu^{1/3}$ regime the spectra at different $\Mdot$ are parallel, with
+$L_\nu\propto\Mdot^{2/3}$ at fixed frequency.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig4_vary_accretion_rate.png}
+  \caption{Disk spectra for Eddington ratios $\lambda=0.01$--$1$ for the
+  $10\,\Msun$ (left) and $10^8\,\Msun$ (right) black holes. The legend gives
+  the corresponding accretion rate.}
+  \label{fig:mdot}
+\end{figure}
+
+\subsection{Scaling relations}
+Figure~\ref{fig:scalings} summarises the scaling laws. At fixed Eddington
+ratio $\nupk\propto M^{-1/4}$ (panel a); at fixed mass
+$\nupk\propto\Mdot^{1/4}$ (panel b); and the bolometric luminosity lies on
+the single relation $L=\Mdot c^2/12$ for every mass (panel c). Combining
+these, the model results can be written compactly as
+\begin{align}
+  \Tmax &\approx \SI{4.4e6}{K}\left(\frac{M}{10\,\Msun}\right)^{-1/4}\left(\frac{\lambda}{0.1}\right)^{1/4},\\
+  \nupk &\approx \SI{2.3e17}{Hz}\left(\frac{M}{10\,\Msun}\right)^{-1/4}\left(\frac{\lambda}{0.1}\right)^{1/4}.
+\end{align}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig5_scaling_relations.png}
+  \caption{(a) Peak frequency versus black hole mass at three Eddington
+  ratios. (b) Peak frequency versus Eddington ratio at three masses.
+  (c) Bolometric luminosity versus accretion rate; points for all masses
+  lie on $L=\Mdot c^2/12$.}
+  \label{fig:scalings}
+\end{figure}
+
+\subsection{Observed flux: distance and inclination}
+Figure~\ref{fig:flux} shows the flux received by observers of the two
+fiducial systems at several inclinations. At $\lambda=0.1$ the X-ray binary
+at \SI{8}{kpc} and $i=\ang{60}$ has a bolometric flux of
+$\SI{1.6e-8}{erg.s^{-1}.cm^{-2}}$, typical of a bright Galactic X-ray
+source. The AGN at \SI{100}{Mpc} and $i=\ang{30}$ has
+$\SI{1.8e-9}{erg.s^{-1}.cm^{-2}}$, its far greater luminosity being largely
+offset by its $1.25\times10^4$ times greater distance.
+
+In this non-relativistic model inclination affects only the normalisation
+through $\cos i$; the spectral shape is unchanged. Going from face-on to
+$i=\ang{85}$ reduces the flux by a factor of 11. An observer who assumes
+isotropic emission and infers $L_{\mathrm{iso}}=4\pi D^2F$ obtains
+$L_{\mathrm{iso}}=2\cos i\,L$, which overestimates the true luminosity by up
+to a factor of two for face-on disks ($L_{\mathrm{iso}}/L=1.73$ for the AGN
+at $i=\ang{30}$) and underestimates it for $i>\ang{60}$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig6_observed_flux.png}
+  \caption{Observed $\nu F_\nu$ for the $10\,\Msun$ black hole at
+  \SI{8}{kpc} (left) and the $10^8\,\Msun$ black hole at \SI{100}{Mpc}
+  (right), both at $\lambda=0.1$, for inclinations of
+  \ang{0}, \ang{30}, \ang{60} and \ang{85}. The fiducial inclination is
+  drawn with a thicker line.}
+  \label{fig:flux}
+\end{figure}
+
+% ===========================================================================
+\section{Discussion}\label{sec:discussion}
+% ===========================================================================
+
+\subsection{Connecting observables to accretion physics}
+The results show how the two basic parameters of the accretion flow map onto
+observable spectral properties.
+\begin{itemize}
+  \item \textbf{The bolometric luminosity measures the accretion rate.}
+        Because $L=\eta\Mdot c^2$ with a mass-independent efficiency, a
+        luminosity measurement (from the flux, distance and inclination)
+        gives $\Mdot$ directly, but carries no information about $M$.
+  \item \textbf{The spectral peak measures the temperature scale.} The peak
+        frequency gives $\Tmax\propto(\Mdot/M^2)^{1/4}$, a combination of
+        mass and accretion rate.
+  \item \textbf{Together they determine the mass.} Eliminating $\Mdot$
+        between $L=\Mdot c^2/12$ and Eq.~\eqref{eq:Tr} gives
+        \begin{equation}
+          M=\left[\frac{3G\Mdot}{8\pi\sigma T_*^4\,(6G/c^2)^3}\right]^{1/2}
+          \propto L^{1/2}\,\Tmax^{-2}.
+        \end{equation}
+        Applying this inversion to synthetic spectra recovers the input mass
+        to \SI{0.03}{\percent} for both the stellar-mass and supermassive
+        cases (see the accompanying notebook). This is the principle behind
+        continuum-fitting estimates of black hole mass and, with relativistic
+        models, spin.
+\end{itemize}
+The weak, fourth-root dependence of temperature on both parameters explains
+why disks around black holes of similar type have similar characteristic
+energies: stellar-mass disks cluster around \SIrange{0.5}{2}{keV}, and AGN
+disks peak in the ultraviolet. It also means that a large change in
+accretion rate produces only a modest shift in the spectral peak but a large
+change in luminosity.
+
+\subsection{Limitations}
+The model captures the essential physics of thermal disk emission, but
+several effects that matter in comparisons with real data are neglected.
+
+\paragraph{General-relativistic disk structure.} The Newtonian temperature
+profile should be replaced by the relativistic solution of
+\citet{NovikovThorne1973}. More importantly, black hole spin moves the ISCO
+from $6\rg$ (non-rotating) to as close as $1\rg$ for a maximally rotating
+black hole with a prograde disk \citep{Bardeen1972}. This increases the
+radiative efficiency from $\approx\SI{5.7}{\percent}$ (Schwarzschild, compared
+with our Newtonian $1/12\approx\SI{8.3}{\percent}$) to as much as
+$\approx\SI{42}{\percent}$, makes the inner disk hotter, and shifts $\nupk$
+upward. Our results therefore correspond most closely to slowly rotating
+black holes.
+
+\paragraph{Relativistic photon propagation.} Near the ISCO the orbital speed
+is $\sim0.4c$, so Doppler boosting, gravitational redshift and light bending
+are significant. They make the observed spectral shape, not only its
+normalisation, depend on inclination: edge-on disks appear harder and
+brighter in their high-energy tail than our $\cos i$ scaling predicts.
+
+\paragraph{Departures from blackbody emission.} In the hot inner regions of
+stellar-mass disks electron scattering dominates over absorption, so the
+emergent spectrum is a diluted, hardened blackbody, usually described by a
+colour-correction factor $f_{\mathrm{col}}\approx1.7$
+\citep{ShimuraTakahara1995}. Atomic absorption edges and limb darkening also
+modify the local spectra, particularly in AGN disks.
+
+\paragraph{Additional emission components.} Real spectra contain components
+beyond the thermal disk: a hot, Comptonising corona that produces power-law
+X-ray emission; reflection features such as the Fe\,K$\alpha$ line;
+synchrotron emission from jets; reprocessing of X-rays in the outer disk
+(irradiation); and emission from the companion star, the broad-line region,
+the dusty torus and the host galaxy.
+
+\paragraph{Range of validity of the thin-disk solution.} The assumption
+$H/r\ll1$ breaks down as $L$ approaches $\LEdd$, where radiation pressure
+puffs up the inner disk and advection becomes important (slim disks), and at
+very low accretion rates, where the flow may become radiatively inefficient.
+AGN disks also become self-gravitating beyond $\sim10^3$--$10^4\rg$, so the
+adopted $\rout=10^5\rg$ affects their predicted infrared emission.
+
+\paragraph{Propagation effects.} We neglect interstellar and intrinsic
+absorption, which removes most extreme-ultraviolet photons and
+hides the peak of AGN disks from direct observation, as well as
+cosmological redshift and time variability.
+
+% ===========================================================================
+\section{Conclusions}
+% ===========================================================================
+
+We have built and validated a numerical model of the thermal emission of a
+geometrically thin, optically thick accretion disk by summing the blackbody
+emission of concentric rings. The ring sum converges as $N^{-2}$ and
+reproduces the analytic luminosity to better than $10^{-5}$. Our main
+findings are:
+\begin{enumerate}
+  \item The disk temperature obeys $\Tmax\propto(\Mdot/M^2)^{1/4}$, so at a
+        fixed Eddington ratio more massive black holes have cooler disks,
+        $\Tmax\propto M^{-1/4}$.
+  \item The same model puts the thermal peak of a $10\,\Msun$ black hole at
+        $\sim\SI{1}{keV}$ (soft X-rays) and that of a $10^8\,\Msun$ black hole at
+        $\sim\SI{740}{\angstrom}$ (far UV), a factor of 56 apart in frequency.
+  \item The bolometric luminosity, $L=\Mdot c^2/12$, depends only on the
+        accretion rate; the spectral peak, $h\nupk\approx2.47\,k\Tmax$, moves
+        only as $\Mdot^{1/4}$.
+  \item The luminosity and the peak frequency together determine both
+        $\Mdot$ and $M$.
+  \item For an observer, the flux scales as $\cos i/D^2$, and assuming
+        isotropic emission biases the inferred luminosity by a factor of
+        $2\cos i$.
+\end{enumerate}
+The most important extensions of this work would be to include the
+relativistic Novikov--Thorne temperature profile with black hole spin,
+relativistic ray tracing, a colour-correction factor, and a Comptonised
+coronal component.
+
+% ===========================================================================
+\appendix
+\section{Code and reproducibility}
+% ===========================================================================
+
+All results in this report can be reproduced from the project repository:
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+  \texttt{accretion\_disk/disk.py} & disk model (\texttt{ThinDisk} class) \\
+  \texttt{scripts/run\_analysis.py} & generates all figures and \texttt{results/summary.csv} \\
+  \texttt{tests/test\_disk.py} & validation tests (\texttt{python -m pytest}) \\
+  \texttt{notebooks/accretion\_disk\_walkthrough.ipynb} & step-by-step walkthrough \\
+\end{tabular}
+\end{center}
+A minimal example:
+\begin{verbatim}
+from accretion_disk import ThinDisk, constants as C
+disk = ThinDisk.from_eddington(mass_msun=10, eddington_ratio=0.1)
+nu   = disk.frequency_grid()
+L_nu = disk.luminosity_nu(nu)                               # erg/s/Hz
+F_nu = disk.flux_nu(nu, distance=8*C.kpc, inclination_deg=60)  # erg/s/cm^2/Hz
+print(disk.T_max, disk.peak_frequency(), disk.bolometric_luminosity())
+\end{verbatim}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}
