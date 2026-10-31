@@ -107,3 +107,32 @@ def test_invalid_input():
     d = ThinDisk.from_eddington(10.0, 0.1)
     with pytest.raises(ValueError):
         d.peak_frequency(kind="bogus")
+
+
+# ---------------------------------------------------------------------------
+# Cross-checks against the published agnpy implementation (Nigro et al. 2022)
+# ---------------------------------------------------------------------------
+
+def test_temperature_comes_from_agnpy_ssdisk(disk):
+    import astropy.units as u
+    r = np.geomspace(1.01, 1e4, 50) * disk.r_in
+    T_agnpy = disk.ssdisk.T(r * u.cm).to_value(u.K)
+    np.testing.assert_allclose(disk.temperature(r), T_agnpy, rtol=1e-12)
+    # ... and agrees with the closed-form Shakura-Sunyaev profile
+    x = disk.r_in / r
+    np.testing.assert_allclose(T_agnpy, disk.T_star * (x ** 3 * (1 - np.sqrt(x))) ** 0.25, rtol=1e-10)
+    assert disk.ssdisk.m_dot.to_value("g s-1") == pytest.approx(disk.mdot, rel=1e-12)
+    assert disk.temperature(0.5 * disk.r_in) == 0.0
+
+
+@pytest.mark.parametrize("mass", [10.0, 1.0e8])
+def test_ring_sum_matches_agnpy_sed_for_compact_disk(mass):
+    # agnpy integrates over 100 linear radii, adequate only when r_out ~ r_in
+    r_g = C.G * mass * C.M_sun / C.c ** 2
+    d = ThinDisk.from_eddington(mass, 0.1, r_out=50 * r_g)
+    nu = d.frequency_grid(300, low=1e-3, high=10)
+    D, inc = 10 * C.kpc, 30.0
+    ours = nu * d.flux_nu(nu, D, inc)
+    theirs = d.agnpy_nuFnu(nu, D, inc)
+    sel = ours > 1e-3 * ours.max()
+    np.testing.assert_allclose(theirs[sel], ours[sel], rtol=3e-3)

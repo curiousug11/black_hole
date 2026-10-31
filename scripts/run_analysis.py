@@ -296,7 +296,7 @@ def fig_observed_flux():
 def fig_convergence():
     n_list = np.unique(np.geomspace(5, 5000, 25).astype(int))
     err_L, err_nu = [], []
-    ref = ThinDisk.from_eddington(10.0, EDD_RATIO, n_rings=40000)
+    ref = ThinDisk.from_eddington(10.0, EDD_RATIO, n_rings=20000)
     nu_ref = ref.peak_frequency()
     for n in n_list:
         d = ThinDisk.from_eddington(10.0, EDD_RATIO, n_rings=int(n))
@@ -304,7 +304,7 @@ def fig_convergence():
         err_nu.append(abs(d.peak_frequency() / nu_ref - 1))
     fig, ax = plt.subplots(figsize=(6.5, 4.3))
     ax.loglog(n_list, err_L, "o-", ms=4, color=CAT[0], label="bolometric luminosity vs analytic")
-    ax.loglog(n_list, err_nu, "s-", ms=4, color=CAT[1], label="peak frequency vs 40 000 rings")
+    ax.loglog(n_list, err_nu, "s-", ms=4, color=CAT[1], label="peak frequency vs 20 000 rings")
     ax.loglog(n_list, 3 * n_list ** -2.0, ls=":", color=INK_2, lw=1.0, label=r"$\propto N^{-2}$")
     ax.set_xlabel("Number of rings N (log-spaced, 6 to 10$^5$ GM/c$^2$)")
     ax.set_ylabel("Fractional error")
@@ -335,6 +335,47 @@ def fig_ring_decomposition():
                  f"L/L$_{{Edd}}$ = {EDD_RATIO}", loc="left")
     ax.legend(title="ring zone (8 zones of 250 rings)", loc="upper left", fontsize=8.5)
     fig.savefig(FIG_DIR / "fig8_ring_decomposition.png")
+    plt.close(fig)
+
+
+def fig_agnpy_crosscheck():
+    """Compare the ring sum with agnpy's own SSDisk SED integration."""
+    m = STELLAR["mass"]
+    r_g = C.G * m * C.M_sun / C.c ** 2
+    D, inc = STELLAR["distance"], STELLAR["inclination"]
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.4))
+
+    ax = axes[0]
+    for color, rout, rlab in zip((CAT[0], CAT[1]), (50.0, 1e5), ("50", "10$^5$")):
+        d = ThinDisk.from_eddington(m, EDD_RATIO, r_out=rout * r_g)
+        nu = np.geomspace(1e13, 3e18, 600)
+        ax.loglog(nu, nu * d.flux_nu(nu, D, inc), color=color,
+                  label=f"ring sum, r$_{{out}}$ = {rlab} GM/c$^2$")
+        ax.loglog(nu, np.maximum(d.agnpy_nuFnu(nu, D, inc), 1e-300), color=color, ls="--",
+                  lw=1.4, label=f"agnpy SSDisk, r$_{{out}}$ = {rlab} GM/c$^2$")
+    ax.set_ylim(1e-14, 3e-8)
+    ax.set_xlabel(r"Frequency $\nu$ [Hz]")
+    ax.set_ylabel(r"$\nu F_\nu$ [erg s$^{-1}$ cm$^{-2}$]")
+    ax.set_title("(a) Spectra: ring sum vs agnpy's built-in integral", loc="left")
+    ax.legend(fontsize=8, loc="upper left")
+
+    ax = axes[1]
+    for color, rout in zip(BLUE_RAMP[2:], (20.0, 50.0, 200.0, 1000.0)):
+        d = ThinDisk.from_eddington(m, EDD_RATIO, r_out=rout * r_g)
+        nu = d.frequency_grid(500, low=1e-3, high=10)
+        ours = nu * d.flux_nu(nu, D, inc)
+        sel = ours > 1e-3 * ours.max()
+        x = C.h * nu[sel] / (C.k_B * d.T_max)
+        ax.semilogx(x, d.agnpy_nuFnu(nu, D, inc)[sel] / ours[sel], color=color,
+                    label=f"r$_{{out}}$ = {rout:g} GM/c$^2$")
+    ax.axhline(1.0, color=INK_2, lw=0.8, ls=":")
+    ax.set_ylim(0.0, 1.1)
+    ax.set_xlabel(r"$h\nu / kT_{max}$")
+    ax.set_ylabel("agnpy / ring sum")
+    ax.set_title("(b) Ratio: agrees to 0.1% for compact disks", loc="left")
+    ax.legend(fontsize=8, loc="lower left")
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "fig9_agnpy_crosscheck.png")
     plt.close(fig)
 
 
@@ -403,6 +444,7 @@ def main():
     fig_observed_flux()
     fig_convergence()
     fig_ring_decomposition()
+    fig_agnpy_crosscheck()
     print(write_tables(summary_rows()))
     print(f"\nFigures written to {FIG_DIR}\nTables written to {RES_DIR}")
 

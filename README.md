@@ -6,10 +6,36 @@ disk as a set of concentric rings. Each ring radiates as a blackbody at its
 local temperature, and the spectrum is the sum of the emission from all rings.
 The model is then used to compare stellar-mass and supermassive black holes.
 
+## Model and packages
+
+The physical model is the standard **Shakura & Sunyaev (1973) thin disk**: a
+steady, Newtonian disk with a zero-torque inner boundary. It is taken from
+established, published packages rather than re-derived:
+
+| Component | Package |
+|---|---|
+| Disk temperature profile $T(r)$ | [`agnpy`](https://github.com/cosimoNigro/agnpy) `agnpy.targets.SSDisk` (Nigro et al. 2022, A&A 660, A18) |
+| Planck function $B_\nu(T)$ | [`astropy`](https://www.astropy.org) `astropy.modeling.physical_models.BlackBody` |
+| Physical constants (CODATA 2018, IAU 2015) | `astropy.constants` |
+
+agnpy's `SSDisk` also computes the multi-temperature blackbody spectrum, but
+it integrates over 100 linearly spaced radii. That is accurate for compact
+disks, but cannot resolve the hot inner disk when $r_{out}\gg r_{in}$: for the
+$r_{out}=10^5\,GM/c^2$ disks used here it underestimates the flux near the
+peak by orders of magnitude (`figures/fig9_agnpy_crosscheck.png`). This
+project therefore does the integration over the disk itself, with
+logarithmically spaced rings, and checks it against agnpy: for compact disks
+($r_{out}\le 50\,GM/c^2$) the two agree to 0.1%.
+
+For fitting real X-ray data, the equivalent models in
+[XSPEC](https://heasarc.gsfc.nasa.gov/xanadu/xspec/) are `ezdiskbb` (same
+zero-torque profile), `diskbb` (Mitsuda et al. 1984, pure $T\propto r^{-3/4}$),
+and `kerrbb` (fully relativistic, with spin).
+
 ```
 accretion_disk/      Python package: the disk model
-  constants.py       CGS physical constants and unit conversions
-  disk.py            ThinDisk class, Planck function, Eddington helpers
+  constants.py       CGS constants, taken from astropy.constants
+  disk.py            ThinDisk: agnpy SSDisk + astropy BlackBody + ring integration
 scripts/
   run_analysis.py    Parameter study: writes every figure and table
 notebooks/
@@ -26,7 +52,7 @@ results/             Generated summary tables (CSV and Markdown)
 
 ```bash
 pip install -r requirements.txt
-python -m pytest              # 18 tests, about 3 s
+python -m pytest              # 22 tests, about 6 s
 python scripts/run_analysis.py  # regenerates figures/ and results/, about 1 min
 jupyter lab notebooks/accretion_disk_walkthrough.ipynb   # guided walkthrough
 cd report && latexmk -pdf report.tex                     # rebuild the report PDF
@@ -88,6 +114,8 @@ efficiency is $\eta = 1/12$.
 | $\int L_\nu\,d\nu$ vs. ring sum of $\sigma T^4$ | agrees to < 1e-3 |
 | $T_{max}$ location and value | $r = 49/36\,r_{in}$, $T_{max} = 0.488\,T_*$ |
 | Spectral slopes | $L_\nu\propto\nu^{2}$ (Rayleigh–Jeans) and $\nu^{1/3}$ (intermediate) |
+| $T(r)$ vs. agnpy `SSDisk.T` and the closed form | identical (< 1e-10) |
+| Ring-sum $\nu F_\nu$ vs. agnpy's own SED ($r_{out}=50\,GM/c^2$) | agrees to < 0.3% (Fig. 9) |
 | Scalings | $T_{max}\propto(\dot M/M^2)^{1/4}$; $L\propto\dot M$ |
 | Observer geometry | $F_\nu\propto\cos i/D^2$; face-on $F_\nu = L_\nu/2\pi D^2$ |
 
@@ -196,3 +224,8 @@ matter when comparing to real data:
 * Novikov, I. D., & Thorne, K. S. (1973), in *Black Holes (Les Astres Occlus)* — relativistic thin disks.
 * Frank, J., King, A., & Raine, D. (2002), *Accretion Power in Astrophysics*, 3rd ed., Cambridge University Press — ch. 5 derives $T(r)$ and the multi-temperature blackbody spectrum.
 * Shimura, T., & Takahara, F. (1995), *ApJ*, 445, 780 — spectral hardening (color correction) in disk atmospheres.
+* Nigro, C., et al. (2022), *A&A*, 660, A18 — agnpy, the package providing the `SSDisk` model used here.
+* Dermer, C. D., & Menon, G. (2009), *High Energy Radiation from Black Holes*, Princeton University Press — the disk formulation followed by agnpy.
+* Astropy Collaboration (2022), *ApJ*, 935, 167 — astropy (constants, `BlackBody`).
+* Mitsuda, K., et al. (1984), *PASJ*, 36, 741 — the multi-colour disk (XSPEC `diskbb`).
+* Zimmerman, E. R., et al. (2005), *ApJ*, 618, 832 — zero-torque multi-colour disk (XSPEC `ezdiskbb`).

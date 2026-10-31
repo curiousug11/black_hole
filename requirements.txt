@@ -1,5 +1,7 @@
-numpy>=1.24
+numpy>=1.24,<2.3   # upper bound required by agnpy 0.5
 scipy>=1.10
 matplotlib>=3.7
+astropy>=7.0       # physical constants and the Planck function (BlackBody)
+agnpy>=0.5         # Shakura-Sunyaev disk model (agnpy.targets.SSDisk)
 pytest>=7
-jupyter>=1.0   # only needed for notebooks/
+jupyter>=1.0       # only needed for notebooks/

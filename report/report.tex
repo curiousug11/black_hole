@@ -19,6 +19,7 @@
 \sisetup{separate-uncertainty, per-mode=symbol, exponent-product=\times}
 \DeclareSIUnit{\angstrom}{\text{\AA}}
 \captionsetup{font=small,labelfont=bf}
+\setlength{\emergencystretch}{2em}
 
 \newcommand{\Msun}{M_\odot}
 \newcommand{\Mdot}{\dot M}
@@ -44,7 +45,9 @@ continuum of a geometrically thin, optically thick accretion disk. The disk is
 modelled as a set of concentric rings, each radiating as a blackbody at the
 local effective temperature of the steady Newtonian thin-disk solution with a
 zero-torque inner boundary at the Schwarzschild innermost stable circular
-orbit. The emission of all rings is summed numerically to obtain the
+orbit, as implemented in the published \texttt{agnpy} package, with the
+Planck function and physical constants taken from \texttt{astropy}. The
+emission of all rings is summed numerically to obtain the
 specific luminosity $L_\nu$ and the flux $F_\nu$ received by an observer at a
 given distance and inclination. The numerical scheme reproduces the analytic
 bolometric luminosity to a fractional accuracy of $5\times10^{-6}$ and
@@ -205,9 +208,43 @@ the characteristic signature of a multi-temperature disk.
 \section{Numerical method}\label{sec:method}
 % ===========================================================================
 
-\subsection{Ring discretisation}
-The model is implemented in Python (\texttt{accretion\_disk/disk.py}) using
-NumPy, in CGS units throughout. The disk is divided into $N$ rings whose
+\subsection{Model implementation and software}\label{sec:software}
+Rather than re-deriving the disk model, we build on established, published
+software:
+\begin{itemize}
+  \item \textbf{Disk model.} The temperature profile, Eq.~\eqref{eq:Tr}, is
+        taken from the \texttt{SSDisk} class of \texttt{agnpy}
+        \citep{Nigro2022}, an open-source, peer-reviewed Python package for
+        the radiative processes of active galactic nuclei. \texttt{SSDisk}
+        implements the \citet{ShakuraSunyaev1973} disk with a zero-torque
+        inner boundary, following \citet{DermerMenon2009}. agnpy describes a
+        disk by $(M, L_{\mathrm{disk}}, \eta, \rin, \rout)$; we pass
+        $L_{\mathrm{disk}}=\eta\Mdot c^2$ with $\eta=1/12$, so agnpy's
+        accretion rate equals ours exactly.
+  \item \textbf{Planck function and constants.} $B_\nu(T)$ is evaluated
+        with the \texttt{BlackBody} model of \texttt{astropy}
+        \citep{Astropy2022}, and all physical constants come from
+        \texttt{astropy.constants} (CODATA 2018 and IAU 2015 values).
+\end{itemize}
+What this project adds is the integration over the disk
+(Section~\ref{sec:rings}). agnpy can also compute the disk spectrum itself
+(\texttt{SSDisk.evaluate\_multi\_T\_bb\_sed}), using the same flux formula as
+Eq.~\eqref{eq:Fnu}, but it integrates over 100 \emph{linearly} spaced radii.
+That is accurate for compact disks, the case agnpy was designed for, but for
+$\rout=10^5\rg$ the grid spacing is $\sim10^3\rg$ and the hot inner disk is
+not resolved. We therefore use agnpy's temperature profile with our own
+logarithmically spaced ring sum, and verify the two against each other in
+Section~\ref{sec:validation}.
+
+The same Shakura--Sunyaev spectrum is also standard in X-ray astronomy: it
+is available in XSPEC \citep{Arnaud1996} as \texttt{ezdiskbb}
+\citep{Zimmerman2005}, which uses the same zero-torque profile, and in the
+simpler \texttt{diskbb} \citep{Mitsuda1984}, which uses a pure
+$T\propto r^{-3/4}$ law.
+
+\subsection{Ring discretisation}\label{sec:rings}
+The code (\texttt{accretion\_disk/disk.py}) works in CGS units throughout.
+The disk is divided into $N$ rings whose
 edges $r_0=\rin<r_1<\dots<r_N=\rout$ are logarithmically spaced, so every
 decade in radius receives equal resolution. Ring $k$ is assigned the
 temperature $T_k=T(\bar r_k)$ at its geometric-mean radius
@@ -220,9 +257,9 @@ become sums over rings,
   \label{eq:ringsum}
 \end{equation}
 which are evaluated for all frequencies at once as a matrix--vector product.
-The default is $N=2000$. The Planck function is evaluated with
-\texttt{expm1} for accuracy at small $h\nu/kT$, and is set to zero for
-$h\nu/kT>700$ to avoid floating-point overflow in the Wien tail.
+The default is $N=2000$. The Planck function is set to exactly zero for
+$h\nu/kT>600$, where it is below $10^{-255}$ of its peak, to avoid
+floating-point overflow in the Wien tail.
 
 Figure~\ref{fig:rings} illustrates the method: grouping the 2000 rings into
 eight zones shows that each zone contributes a nearly blackbody spectrum,
@@ -248,14 +285,15 @@ neighbouring points in $\log\nu$--$\log(\nu L_\nu)$ space. Scaling the grid
 with $\Tmax$ gives the same relative resolution for every mass and
 accretion rate.
 
-\subsection{Validation}
+\subsection{Validation}\label{sec:validation}
 The implementation is checked by an automated test suite
-(\texttt{tests/test\_disk.py}, 18 tests). Table~\ref{tab:validation}
-summarises the main checks against analytic results.
+(\texttt{tests/test\_disk.py}, 22 tests). Table~\ref{tab:validation}
+summarises the main checks against analytic results and against agnpy.
 
 \begin{table}[H]
   \centering
-  \caption{Validation of the numerical model against analytic results.}
+  \caption{Validation of the numerical model against analytic results and
+  against agnpy.}
   \label{tab:validation}
   \begin{tabular}{@{}ll@{}}
     \toprule
@@ -270,6 +308,8 @@ summarises the main checks against analytic results.
     Mass scaling at fixed $\lambda$ & $\nupk\propto M^{-0.2500}$ \\
     Accretion-rate scaling at fixed $M$ & $\nupk\propto\Mdot^{0.2500}$, $L\propto\Mdot^{1.000}$ \\
     Observer geometry & $F_\nu\propto\cos i/D^2$, face-on $F_\nu=L_\nu/2\pi D^2$ \\
+    $T(r)$ vs.\ closed form, Eq.~\eqref{eq:Tr} & identical to $<10^{-10}$ \\
+    $\nu F_\nu$ vs.\ agnpy SED ($\rout=50\rg$) & agrees to $<\SI{0.3}{\percent}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -285,8 +325,28 @@ compared with the physical uncertainties of the model.
   \includegraphics[width=0.62\textwidth]{fig7_convergence.png}
   \caption{Fractional error of the bolometric luminosity (relative to
   Eq.~\ref{eq:Lanalytic}) and of the peak frequency (relative to a
-  40\,000-ring calculation) as a function of the number of rings $N$.}
+  20\,000-ring calculation) as a function of the number of rings $N$.}
   \label{fig:convergence}
+\end{figure}
+
+Figure~\ref{fig:agnpy} compares our ring sum with agnpy's own spectrum
+calculation. For compact disks ($\rout\le50\rg$), where agnpy's 100-point
+linear grid is adequate, the two agree to \SI{0.1}{\percent} at all
+frequencies that carry significant flux. This confirms that our code
+computes the same Shakura--Sunyaev spectrum as the published package. As
+$\rout$ grows, agnpy's grid becomes too coarse to resolve the inner disk: at
+$\rout=10^3\rg$ it underestimates the flux at $h\nu=10\,k\Tmax$ by a factor
+of five, and at $\rout=10^5\rg$ it misses the spectral peak entirely.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{fig9_agnpy_crosscheck.png}
+  \caption{(a) $\nu F_\nu$ of a $10\,\Msun$ disk at $\lambda=0.1$
+  (\SI{8}{kpc}, $i=\ang{60}$) from our ring sum (solid) and from agnpy's
+  built-in integration (dashed), for $\rout=50\rg$ (the curves overlap) and
+  $\rout=10^5\rg$. (b) Ratio of agnpy's result to the ring sum for several
+  disk sizes.}
+  \label{fig:agnpy}
 \end{figure}
 
 % ===========================================================================
@@ -555,9 +615,12 @@ cosmological redshift and time variability.
 \section{Conclusions}
 % ===========================================================================
 
-We have built and validated a numerical model of the thermal emission of a
-geometrically thin, optically thick accretion disk by summing the blackbody
-emission of concentric rings. The ring sum converges as $N^{-2}$ and
+We have modelled the thermal emission of a geometrically thin, optically
+thick accretion disk using the standard Shakura--Sunyaev model as implemented
+in the published \texttt{agnpy} package, with \texttt{astropy} for the
+Planck function and physical constants, and by summing the blackbody
+emission of concentric rings. The ring sum agrees with agnpy's own spectrum
+to \SI{0.1}{\percent} where the latter is valid, converges as $N^{-2}$ and
 reproduces the analytic luminosity to better than $10^{-5}$. Our main
 findings are:
 \begin{enumerate}
@@ -590,13 +653,15 @@ All results in this report can be reproduced from the project repository:
 \begin{center}
 \small
 \begin{tabular}{@{}ll@{}}
-  \texttt{accretion\_disk/disk.py} & disk model (\texttt{ThinDisk} class) \\
+  \texttt{accretion\_disk/disk.py} & \texttt{ThinDisk} (agnpy \texttt{SSDisk} + ring sum) \\
   \texttt{scripts/run\_analysis.py} & generates all figures and \texttt{results/summary.csv} \\
   \texttt{tests/test\_disk.py} & validation tests (\texttt{python -m pytest}) \\
   \texttt{notebooks/accretion\_disk\_walkthrough.ipynb} & step-by-step walkthrough \\
 \end{tabular}
 \end{center}
-A minimal example:
+The code requires Python~3 with \texttt{numpy}, \texttt{scipy},
+\texttt{matplotlib}, \texttt{astropy} and \texttt{agnpy} (see
+\texttt{requirements.txt}). A minimal example:
 \begin{verbatim}
 from accretion_disk import ThinDisk, constants as C
 disk = ThinDisk.from_eddington(mass_msun=10, eddington_ratio=0.1)
@@ -604,6 +669,7 @@ nu   = disk.frequency_grid()
 L_nu = disk.luminosity_nu(nu)                               # erg/s/Hz
 F_nu = disk.flux_nu(nu, distance=8*C.kpc, inclination_deg=60)  # erg/s/cm^2/Hz
 print(disk.T_max, disk.peak_frequency(), disk.bolometric_luminosity())
+print(disk.ssdisk)      # the underlying agnpy.targets.SSDisk object
 \end{verbatim}
 
 \bibliographystyle{unsrtnat}

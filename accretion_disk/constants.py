@@ -1,19 +1,27 @@
-"""Physical constants and unit conversions in CGS units."""
+"""Physical constants in CGS units, taken from :mod:`astropy.constants`.
 
-G = 6.67430e-8            # gravitational constant [cm^3 g^-1 s^-2]
-c = 2.99792458e10         # speed of light [cm s^-1]
-h = 6.62607015e-27        # Planck constant [erg s]
-k_B = 1.380649e-16        # Boltzmann constant [erg K^-1]
-sigma_SB = 5.670374419e-5  # Stefan-Boltzmann constant [erg cm^-2 s^-1 K^-4]
-m_p = 1.67262192e-24      # proton mass [g]
-sigma_T = 6.6524587e-25   # Thomson cross-section [cm^2]
+Astropy provides CODATA 2018 physical constants and IAU 2015 astronomical
+constants; they are converted once to plain floats (CGS) here so the rest of
+the code can do fast NumPy arithmetic.
+"""
 
-M_sun = 1.98847e33        # solar mass [g]
-yr = 3.15576e7            # Julian year [s]
-pc = 3.0856775814913673e18  # parsec [cm]
+import astropy.constants as _ac
+import astropy.units as _u
+
+G = _ac.G.cgs.value                 # gravitational constant [cm^3 g^-1 s^-2]
+c = _ac.c.cgs.value                 # speed of light [cm s^-1]
+h = _ac.h.cgs.value                 # Planck constant [erg s]
+k_B = _ac.k_B.cgs.value             # Boltzmann constant [erg K^-1]
+sigma_SB = _ac.sigma_sb.cgs.value   # Stefan-Boltzmann constant [erg cm^-2 s^-1 K^-4]
+m_p = _ac.m_p.cgs.value             # proton mass [g]
+sigma_T = _ac.sigma_T.cgs.value     # Thomson cross-section [cm^2]
+
+M_sun = _ac.M_sun.cgs.value         # solar mass [g] (IAU 2015 nominal)
+yr = (1 * _u.yr).to_value(_u.s)     # Julian year [s]
+pc = _ac.pc.cgs.value               # parsec [cm]
 kpc = 1.0e3 * pc
 Mpc = 1.0e6 * pc
 
-eV = 1.602176634e-12      # electron-volt [erg]
+eV = (1 * _u.eV).to_value(_u.erg)   # electron-volt [erg]
 keV = 1.0e3 * eV
-angstrom = 1.0e-8         # [cm]
+angstrom = (1 * _u.AA).to_value(_u.cm)

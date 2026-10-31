@@ -1,25 +1,44 @@
-"""Geometrically thin, optically thick (Shakura-Sunyaev) accretion disk model.
+"""Geometrically thin, optically thick (Shakura & Sunyaev 1973) accretion disk.
 
-The disk is divided into concentric annuli ("rings").  Each ring is assumed
-to radiate as a blackbody at the local effective temperature given by the
-steady-state, Newtonian thin-disk solution with a zero-torque inner boundary:
+The physical model is the standard steady, Newtonian thin disk with a
+zero-torque inner boundary, as implemented in the published ``agnpy`` package
+(Nigro et al. 2022, A&A 660, A18; class :class:`agnpy.targets.SSDisk`, which
+follows Dermer & Menon 2009):
 
     sigma T(r)^4 = (3 G M Mdot) / (8 pi r^3) * [1 - sqrt(r_in / r)]
 
-The disk spectrum is obtained by summing the Planck emission of every ring,
-weighted by its surface area:
+The building blocks come from established packages:
+
+* local temperature T(r)      -> ``agnpy.targets.SSDisk.T``
+* Planck function B_nu(T)     -> ``astropy.modeling.physical_models.BlackBody``
+* physical constants          -> ``astropy.constants`` (via ``constants.py``)
+
+What this module adds is the numerical integration over the disk.  The disk is
+divided into logarithmically spaced concentric rings, each radiating as a
+blackbody at its local temperature, and their emission is summed:
 
     L_nu = sum_k  2 * pi * B_nu(T_k) * A_k          (both faces, A_k one face)
     F_nu = cos(i) / D^2 * sum_k B_nu(T_k) * A_k     (observer at D, inclination i)
+
+The flux expression is the same as agnpy's ``SSDisk.evaluate_multi_T_bb_sed``
+(with mu_s = cos i), but agnpy integrates over 100 *linearly* spaced radii,
+which cannot resolve the hot inner disk when r_out >> r_in.  The log-spaced
+ring sum here converges for any disk size; ``agnpy_nuFnu`` exposes agnpy's own
+calculation so the two can be compared (see tests/test_disk.py).
 
 All quantities are in CGS units unless stated otherwise.
 """
 
 from __future__ import annotations
 
+import warnings
 from dataclasses import dataclass, field
+from functools import cached_property
 
 import numpy as np
+import astropy.units as u
+from astropy.modeling.physical_models import BlackBody
+from agnpy.targets import SSDisk
 
 from . import constants as const
 
@@ -30,6 +49,9 @@ __all__ = [
     "ThinDisk",
 ]
 
+_BLACKBODY = BlackBody()
+_B_UNIT = u.Unit("erg s-1 cm-2 Hz-1 sr-1")
+
 
 # ---------------------------------------------------------------------------
 # Elementary physics
@@ -38,19 +60,22 @@ __all__ = [
 def planck_nu(nu, T):
     """Planck specific intensity B_nu(T) [erg s^-1 cm^-2 Hz^-1 sr^-1].
 
-    ``nu`` and ``T`` broadcast against each other.  Overflow in the Wien tail
-    is handled by returning exactly zero where h nu / k T is very large, and
-    T <= 0 also returns zero.
+    Evaluated with astropy's ``BlackBody`` model.  ``nu`` [Hz] and ``T`` [K]
+    broadcast against each other.  Elements with T <= 0, or deep in the Wien
+    tail (h nu / k T > 600, where B_nu < 1e-255 of its peak), are returned as
+    exactly zero instead of being passed to astropy.
     """
     nu = np.asarray(nu, dtype=float)
     T = np.asarray(T, dtype=float)
     nu_b, T_b = np.broadcast_arrays(nu, T)
     out = np.zeros(nu_b.shape)
     good = T_b > 0
-    x = np.zeros(nu_b.shape)
+    x = np.full(nu_b.shape, np.inf)
     x[good] = const.h * nu_b[good] / (const.k_B * T_b[good])
-    good &= x < 700.0  # exp(700) ~ 1e304; beyond this B_nu is negligible
-    out[good] = (2.0 * const.h * nu_b[good] ** 3 / const.c ** 2) / np.expm1(x[good])
+    good &= x < 600.0  # astropy overflows c^2 (e^x - 1) in SI near x ~ 700
+    if np.any(good):
+        out[good] = _BLACKBODY.evaluate(nu_b[good] * u.Hz, T_b[good] * u.K,
+                                        scale=1).to_value(_B_UNIT)
     return out
 
 
@@ -70,7 +95,7 @@ def eddington_accretion_rate(mass, efficiency):
 
 @dataclass
 class ThinDisk:
-    """A steady, Newtonian, geometrically thin and optically thick disk.
+    """A Shakura-Sunyaev disk (agnpy ``SSDisk``) integrated ring by ring.
 
     Parameters
     ----------
@@ -84,9 +109,6 @@ class ThinDisk:
         Outer disk radius [cm].  Defaults to 1e5 GM/c^2.
     n_rings : int
         Number of logarithmically spaced annuli used in the integration.
-    torque_free_inner_edge : bool
-        If True (default) include the [1 - sqrt(r_in/r)] zero-torque factor;
-        if False use the simple T ~ r^-3/4 power law everywhere.
     """
 
     mass: float
@@ -94,7 +116,6 @@ class ThinDisk:
     r_in: float | None = None
     r_out: float | None = None
     n_rings: int = 2000
-    torque_free_inner_edge: bool = True
     _edges: np.ndarray = field(init=False, repr=False)
 
     def __post_init__(self):
@@ -127,6 +148,23 @@ class ThinDisk:
         mdot = eddington_ratio * eddington_accretion_rate(mass, efficiency)
         return cls(mass=mass, mdot=mdot, **kwargs)
 
+    # -- the published model ------------------------------------------------
+    @cached_property
+    def ssdisk(self):
+        """The equivalent :class:`agnpy.targets.SSDisk` instance.
+
+        agnpy parametrises the disk by (M, L_disk, eta); choosing
+        L_disk = eta Mdot c^2 with eta = r_g / (2 r_in) makes agnpy's accretion
+        rate equal to ``self.mdot``.
+        """
+        return SSDisk(
+            M_BH=self.mass * u.g,
+            L_disk=self.efficiency * self.mdot * const.c ** 2 * u.Unit("erg s-1"),
+            eta=self.efficiency,
+            R_in=self.r_in * u.cm,
+            R_out=self.r_out * u.cm,
+        )
+
     # -- characteristic scales --------------------------------------------
     @property
     def mass_msun(self):
@@ -154,8 +192,8 @@ class ThinDisk:
 
     @property
     def r_T_max(self):
-        """Radius of maximum temperature, (49/36) r_in (torque-free case)."""
-        return (49.0 / 36.0) * self.r_in if self.torque_free_inner_edge else self.r_in
+        """Radius of maximum temperature, (49/36) r_in."""
+        return (49.0 / 36.0) * self.r_in
 
     @property
     def T_max(self):
@@ -164,12 +202,13 @@ class ThinDisk:
 
     # -- radial structure --------------------------------------------------
     def temperature(self, r):
-        """Effective temperature T(r) [K]; zero inside r_in."""
+        """Effective temperature T(r) [K] from agnpy's ``SSDisk.T``; zero inside r_in."""
         r = np.asarray(r, dtype=float)
-        x = self.r_in / r
-        f = 1.0 - np.sqrt(np.clip(x, 0.0, 1.0)) if self.torque_free_inner_edge else 1.0
-        T = self.T_star * (x ** 3 * f) ** 0.25
-        return np.where(r >= self.r_in, T, 0.0)
+        T = np.zeros(r.shape)
+        inside = r >= self.r_in
+        if np.any(inside):
+            T[inside] = self.ssdisk.T(r[inside] * u.cm).to_value(u.K)
+        return T
 
     @property
     def ring_edges(self):
@@ -185,7 +224,7 @@ class ThinDisk:
         """Area of one face of each ring [cm^2]."""
         return np.pi * (self._edges[1:] ** 2 - self._edges[:-1] ** 2)
 
-    @property
+    @cached_property
     def ring_temperatures(self):
         return self.temperature(self.ring_radii)
 
@@ -193,8 +232,12 @@ class ThinDisk:
     def _ring_sum(self, nu):
         """sum_k B_nu(T_k) A_k  [erg s^-1 Hz^-1 sr^-1] for each frequency."""
         nu = np.atleast_1d(np.asarray(nu, dtype=float))
-        B = planck_nu(nu[:, None], self.ring_temperatures[None, :])
-        return B @ self.ring_areas
+        T, A = self.ring_temperatures, self.ring_areas
+        out = np.empty(nu.size)
+        chunk = max(1, int(2_000_000 // T.size))   # bound memory use
+        for s in range(0, nu.size, chunk):
+            out[s:s + chunk] = planck_nu(nu[s:s + chunk, None], T[None, :]) @ A
+        return out
 
     def luminosity_nu(self, nu):
         """Specific luminosity L_nu [erg s^-1 Hz^-1] from both disk faces."""
@@ -212,6 +255,23 @@ class ThinDisk:
             raise ValueError("inclination must be between 0 and 90 degrees")
         return cos_i / distance ** 2 * self._ring_sum(nu)
 
+    def agnpy_nuFnu(self, nu, distance, inclination_deg):
+        """nu F_nu [erg s^-1 cm^-2] computed by agnpy's own integration.
+
+        Calls ``SSDisk.evaluate_multi_T_bb_sed`` (z = 0), which integrates
+        over 100 linearly spaced radii.  Accurate only for compact disks;
+        provided for cross-checking the ring sum.
+        """
+        nu = np.atleast_1d(np.asarray(nu, dtype=float))
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")  # np.trapz deprecation, Wien-tail underflow
+            sed = SSDisk.evaluate_multi_T_bb_sed(
+                nu * u.Hz, 0.0, self.mass * u.g, self.mdot * u.Unit("g s-1"),
+                self.r_in * u.cm, self.r_out * u.cm, distance * u.cm,
+                mu_s=np.cos(np.radians(inclination_deg)),
+            )
+        return sed.to_value(u.Unit("erg cm-2 s-1"))
+
     def bolometric_luminosity(self):
         """Total luminosity [erg/s] from summing sigma T^4 over all rings."""
         return 2.0 * const.sigma_SB * np.sum(self.ring_temperatures ** 4 * self.ring_areas)
@@ -219,15 +279,13 @@ class ThinDisk:
     def analytic_luminosity(self, infinite=False):
         """Exact Newtonian luminosity of the disk between r_in and r_out.
 
-        With X = r_out / r_in and the torque-free boundary:
+        With X = r_out / r_in:
             L = (3 G M Mdot / 2 r_in) [ (1 - 1/X) - (2/3)(1 - X^-3/2) ]
         which tends to G M Mdot / (2 r_in) as X -> infinity.
         """
         pref = 3.0 * const.G * self.mass * self.mdot / (2.0 * self.r_in)
         inv_X = 0.0 if infinite else self.r_in / self.r_out
-        if self.torque_free_inner_edge:
-            return pref * ((1.0 - inv_X) - (2.0 / 3.0) * (1.0 - inv_X ** 1.5))
-        return pref * (1.0 - inv_X)
+        return pref * ((1.0 - inv_X) - (2.0 / 3.0) * (1.0 - inv_X ** 1.5))
 
     def frequency_grid(self, n=2000, low=1e-5, high=40.0):
         """Log-spaced frequencies spanning the disk emission [Hz].
