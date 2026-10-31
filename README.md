@@ -12,6 +12,8 @@ accretion_disk/      Python package: the disk model
   disk.py            ThinDisk class, Planck function, Eddington helpers
 scripts/
   run_analysis.py    Parameter study: writes every figure and table
+notebooks/
+  accretion_disk_walkthrough.ipynb   Step-by-step walkthrough of the analysis
 tests/test_disk.py   Physics and numerical checks (pytest)
 figures/             Generated figures (PNG)
 results/             Generated summary tables (CSV and Markdown)
@@ -23,7 +25,15 @@ results/             Generated summary tables (CSV and Markdown)
 pip install -r requirements.txt
 python -m pytest              # 18 tests, about 3 s
 python scripts/run_analysis.py  # regenerates figures/ and results/, about 1 min
+jupyter lab notebooks/accretion_disk_walkthrough.ipynb   # guided walkthrough
 ```
+
+The notebook is committed with its outputs, so it can be read on GitHub
+without running anything. It covers the temperature profile, how individual
+rings combine into the spectrum, checks of the numerical integration, the
+mass and accretion-rate sweeps, observed flux versus inclination, and how to
+infer the black hole mass from $L$ and $\nu_{peak}$. It ends with an
+`explore()` helper for trying any combination of parameters.
 
 Using the model directly:
 
