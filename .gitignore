@@ -18,3 +18,4 @@ report/*.synctex.gz
 video/build/
 video/media/
 video/audio/*.wav
+video/build_*.log
