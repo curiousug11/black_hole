@@ -13,3 +13,8 @@ report/*.log
 report/*.out
 report/*.toc
 report/*.synctex.gz
+
+# Video build products (the final mp4/srt in video/ are committed)
+video/build/
+video/media/
+video/audio/*.wav

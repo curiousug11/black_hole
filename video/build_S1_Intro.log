@@ -1,0 +1,174 @@
+Manim Community v0.22.1
+
+[11/03/26 07:18:31] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 0: Write(Text('Why do black holes glow?')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 0: Write(Text('Why do black holes glow?')):  63%|██████▎   | 19/30 [00:00<00:00, 184.16it/s]                                                                                                                          INFO     Animation 0 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0000.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 1: FadeIn(Circle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 1: FadeIn(Circle), etc.:  57%|█████▋    | 17/30 [00:00<00:00, 168.23it/s]                                                                                                       INFO     Animation 1 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0001.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 2: LaggedStart(Group):   0%|          | 0/30 [00:00<?, ?it/s]                                                                                           INFO     Animation 2 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0002.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 3: FadeOut(VGroup of 8 submobjects):   0%|          | 0/23 [00:00<?, ?it/s]                                                                                     [11/03/26 07:18:32] INFO     Animation 3 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0003.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 4: FadeIn(VGroup of 5 submobjects), etc.:   0%|          | 0/64 [00:00<?, ?it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  16%|█▌        | 10/64 [00:00<00:00, 97.04it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  31%|███▏      | 20/64 [00:00<00:00, 88.50it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  45%|████▌     | 29/64 [00:00<00:00, 85.56it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  59%|█████▉    | 38/64 [00:00<00:00, 84.64it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  73%|███████▎  | 47/64 [00:00<00:00, 77.35it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  86%|████████▌ | 55/64 [00:00<00:00, 74.35it/s]Animation 4: FadeIn(VGroup of 5 submobjects), etc.:  98%|█████████▊| 63/64 [00:00<00:00, 73.20it/s]                                                                                                   [11/03/26 07:18:33] INFO     Animation 4 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0004.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 5 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0005.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 6: FadeIn(Text('accretion disk')), etc.:   0%|          | 0/15 [00:00<?, ?it/s]                                                                                                             INFO     Animation 6 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0006.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 7: MoveAlongPath(Dot), etc.:   0%|          | 0/101 [00:00<?, ?it/s]Animation 7: MoveAlongPath(Dot), etc.:   2%|▏         | 2/101 [00:00<00:09, 10.75it/s]Animation 7: MoveAlongPath(Dot), etc.:   4%|▍         | 4/101 [00:00<00:09,  9.92it/s]Animation 7: MoveAlongPath(Dot), etc.:   5%|▍         | 5/101 [00:00<00:09,  9.85it/s]Animation 7: MoveAlongPath(Dot), etc.:   7%|▋         | 7/101 [00:00<00:09, 10.28it/s]Animation 7: MoveAlongPath(Dot), etc.:   9%|▉         | 9/101 [00:00<00:09, 10.20it/s]Animation 7: MoveAlongPath(Dot), etc.:  11%|█         | 11/101 [00:01<00:08, 10.35it/s]Animation 7: MoveAlongPath(Dot), etc.:  13%|█▎        | 13/101 [00:01<00:08, 10.54it/s]Animation 7: MoveAlongPath(Dot), etc.:  15%|█▍        | 15/101 [00:01<00:07, 10.78it/s]Animation 7: MoveAlongPath(Dot), etc.:  17%|█▋        | 17/101 [00:01<00:08, 10.45it/s]Animation 7: MoveAlongPath(Dot), etc.:  19%|█▉        | 19/101 [00:01<00:08, 10.09it/s]Animation 7: MoveAlongPath(Dot), etc.:  21%|██        | 21/101 [00:02<00:07, 10.08it/s]Animation 7: MoveAlongPath(Dot), etc.:  23%|██▎       | 23/101 [00:02<00:07, 10.09it/s]Animation 7: MoveAlongPath(Dot), etc.:  25%|██▍       | 25/101 [00:02<00:07,  9.57it/s]Animation 7: MoveAlongPath(Dot), etc.:  27%|██▋       | 27/101 [00:02<00:07,  9.63it/s]Animation 7: MoveAlongPath(Dot), etc.:  28%|██▊       | 28/101 [00:02<00:07,  9.50it/s]Animation 7: MoveAlongPath(Dot), etc.:  29%|██▊       | 29/101 [00:02<00:07,  9.41it/s]Animation 7: MoveAlongPath(Dot), etc.:  30%|██▉       | 30/101 [00:03<00:07,  9.10it/s]Animation 7: MoveAlongPath(Dot), etc.:  31%|███       | 31/101 [00:03<00:07,  9.15it/s]Animation 7: MoveAlongPath(Dot), etc.:  32%|███▏      | 32/101 [00:03<00:08,  8.40it/s]Animation 7: MoveAlongPath(Dot), etc.:  33%|███▎      | 33/101 [00:03<00:08,  8.16it/s]Animation 7: MoveAlongPath(Dot), etc.:  34%|███▎      | 34/101 [00:03<00:08,  8.02it/s]Animation 7: MoveAlongPath(Dot), etc.:  35%|███▍      | 35/101 [00:03<00:08,  8.23it/s]Animation 7: MoveAlongPath(Dot), etc.:  37%|███▋      | 37/101 [00:03<00:06,  9.17it/s]Animation 7: MoveAlongPath(Dot), etc.:  38%|███▊      | 38/101 [00:03<00:06,  9.32it/s]Animation 7: MoveAlongPath(Dot), etc.:  40%|███▉      | 40/101 [00:04<00:06,  9.40it/s]Animation 7: MoveAlongPath(Dot), etc.:  41%|████      | 41/101 [00:04<00:06,  8.88it/s]Animation 7: MoveAlongPath(Dot), etc.:  42%|████▏     | 42/101 [00:04<00:06,  8.47it/s]Animation 7: MoveAlongPath(Dot), etc.:  44%|████▎     | 44/101 [00:04<00:06,  9.00it/s]Animation 7: MoveAlongPath(Dot), etc.:  46%|████▌     | 46/101 [00:04<00:05,  9.50it/s]Animation 7: MoveAlongPath(Dot), etc.:  47%|████▋     | 47/101 [00:04<00:05,  9.44it/s]Animation 7: MoveAlongPath(Dot), etc.:  48%|████▊     | 48/101 [00:05<00:05,  9.54it/s]Animation 7: MoveAlongPath(Dot), etc.:  49%|████▊     | 49/101 [00:05<00:05,  9.56it/s]Animation 7: MoveAlongPath(Dot), etc.:  50%|█████     | 51/101 [00:05<00:05,  9.74it/s]Animation 7: MoveAlongPath(Dot), etc.:  52%|█████▏    | 53/101 [00:05<00:04,  9.93it/s]Animation 7: MoveAlongPath(Dot), etc.:  53%|█████▎    | 54/101 [00:05<00:04,  9.82it/s]Animation 7: MoveAlongPath(Dot), etc.:  55%|█████▌    | 56/101 [00:05<00:04,  9.36it/s]Animation 7: MoveAlongPath(Dot), etc.:  57%|█████▋    | 58/101 [00:06<00:04,  9.58it/s]Animation 7: MoveAlongPath(Dot), etc.:  59%|█████▉    | 60/101 [00:06<00:04,  9.71it/s]Animation 7: MoveAlongPath(Dot), etc.:  60%|██████    | 61/101 [00:06<00:04,  9.68it/s]Animation 7: MoveAlongPath(Dot), etc.:  61%|██████▏   | 62/101 [00:06<00:04,  9.62it/s]Animation 7: MoveAlongPath(Dot), etc.:  62%|██████▏   | 63/101 [00:06<00:03,  9.51it/s]Animation 7: MoveAlongPath(Dot), etc.:  63%|██████▎   | 64/101 [00:06<00:03,  9.37it/s]Animation 7: MoveAlongPath(Dot), etc.:  65%|██████▌   | 66/101 [00:06<00:03,  9.66it/s]Animation 7: MoveAlongPath(Dot), etc.:  66%|██████▋   | 67/101 [00:07<00:03,  9.37it/s]Animation 7: MoveAlongPath(Dot), etc.:  67%|██████▋   | 68/101 [00:07<00:03,  8.97it/s]Animation 7: MoveAlongPath(Dot), etc.:  68%|██████▊   | 69/101 [00:07<00:03,  8.87it/s]Animation 7: MoveAlongPath(Dot), etc.:  69%|██████▉   | 70/101 [00:07<00:03,  9.14it/s]Animation 7: MoveAlongPath(Dot), etc.:  70%|███████   | 71/101 [00:07<00:03,  9.19it/s]Animation 7: MoveAlongPath(Dot), etc.:  71%|███████▏  | 72/101 [00:07<00:03,  9.28it/s]Animation 7: MoveAlongPath(Dot), etc.:  72%|███████▏  | 73/101 [00:07<00:03,  8.84it/s]Animation 7: MoveAlongPath(Dot), etc.:  73%|███████▎  | 74/101 [00:07<00:03,  8.75it/s]Animation 7: MoveAlongPath(Dot), etc.:  75%|███████▌  | 76/101 [00:08<00:02,  9.38it/s]Animation 7: MoveAlongPath(Dot), etc.:  76%|███████▌  | 77/101 [00:08<00:02,  9.46it/s]Animation 7: MoveAlongPath(Dot), etc.:  77%|███████▋  | 78/101 [00:08<00:02,  9.53it/s]Animation 7: MoveAlongPath(Dot), etc.:  78%|███████▊  | 79/101 [00:08<00:02,  9.33it/s]Animation 7: MoveAlongPath(Dot), etc.:  80%|████████  | 81/101 [00:08<00:02,  9.79it/s]Animation 7: MoveAlongPath(Dot), etc.:  81%|████████  | 82/101 [00:08<00:01,  9.81it/s]Animation 7: MoveAlongPath(Dot), etc.:  82%|████████▏ | 83/101 [00:08<00:01,  9.61it/s]Animation 7: MoveAlongPath(Dot), etc.:  83%|████████▎ | 84/101 [00:08<00:01,  8.56it/s]Animation 7: MoveAlongPath(Dot), etc.:  85%|████████▌ | 86/101 [00:09<00:01,  9.28it/s]Animation 7: MoveAlongPath(Dot), etc.:  87%|████████▋ | 88/101 [00:09<00:01,  9.67it/s]Animation 7: MoveAlongPath(Dot), etc.:  89%|████████▉ | 90/101 [00:09<00:01, 10.09it/s]Animation 7: MoveAlongPath(Dot), etc.:  91%|█████████ | 92/101 [00:09<00:00,  9.88it/s]Animation 7: MoveAlongPath(Dot), etc.:  92%|█████████▏| 93/101 [00:09<00:00,  9.88it/s]Animation 7: MoveAlongPath(Dot), etc.:  93%|█████████▎| 94/101 [00:09<00:00,  9.82it/s]Animation 7: MoveAlongPath(Dot), etc.:  94%|█████████▍| 95/101 [00:09<00:00,  9.20it/s]Animation 7: MoveAlongPath(Dot), etc.:  95%|█████████▌| 96/101 [00:10<00:00,  8.55it/s]Animation 7: MoveAlongPath(Dot), etc.:  96%|█████████▌| 97/101 [00:10<00:00,  8.26it/s]Animation 7: MoveAlongPath(Dot), etc.:  97%|█████████▋| 98/101 [00:10<00:00,  8.04it/s]Animation 7: MoveAlongPath(Dot), etc.:  99%|█████████▉| 100/101 [00:10<00:00,  8.93it/s]                                                                                        [11/03/26 07:18:44] INFO     Animation 7 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0007.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 8: FadeOut(Dot), etc.:   0%|          | 0/9 [00:00<?, ?it/s]                                                                                          INFO     Animation 8 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0008.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 9 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0009.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 10: FadeOut(Text('accretion disk')), etc.:   0%|          | 0/38 [00:00<?, ?it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:   8%|▊         | 3/38 [00:00<00:01, 26.60it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  16%|█▌        | 6/38 [00:00<00:01, 25.78it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  24%|██▎       | 9/38 [00:00<00:01, 26.98it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  32%|███▏      | 12/38 [00:00<00:01, 25.61it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  39%|███▉      | 15/38 [00:00<00:00, 24.32it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  47%|████▋     | 18/38 [00:00<00:00, 24.70it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  55%|█████▌    | 21/38 [00:00<00:00, 25.36it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  63%|██████▎   | 24/38 [00:00<00:00, 24.85it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  71%|███████   | 27/38 [00:01<00:00, 23.99it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  79%|███████▉  | 30/38 [00:01<00:00, 23.48it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  87%|████████▋ | 33/38 [00:01<00:00, 24.07it/s]Animation 10: FadeOut(Text('accretion disk')), etc.:  95%|█████████▍| 36/38 [00:01<00:00, 24.24it/s]                                                                                                    [11/03/26 07:18:46] INFO     Animation 10 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0010.mp4'                                          
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\sim                               
+                             10\,M_\odot\special{dvisvgm                        
+                             :raw </g>} to                                      
+                             video/build/media_lq/Tex/7d                        
+                             9a08ef1c4f3281.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\sim                               
+                             10^{8}\,M_\odot\special{dvi                        
+                             svgm:raw </g>} to                                  
+                             video/build/media_lq/Tex/c6                        
+                             762687036542c4.tex                                 
+[11/03/26 07:18:47] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 11: FadeIn(VGroup of 2 submobjects):   0%|          | 0/23 [00:00<?, ?it/s]                                                                                                         INFO     Animation 11 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0011.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 12 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0012.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 13: FadeIn(VGroup of 2 submobjects):   0%|          | 0/23 [00:00<?, ?it/s]Animation 13: FadeIn(VGroup of 2 submobjects):  87%|████████▋ | 20/23 [00:00<00:00, 198.56it/s]                                                                                                                   INFO     Animation 13 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0013.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+[11/03/26 07:18:48] INFO     Animation 14 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0014.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 15: Write(Text('Same physics, different colours. Why?')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 15: Write(Text('Same physics, different colours. Why?')):  57%|█████▋    | 17/30 [00:00<00:00, 161.82it/s]                                                                                                                                        INFO     Animation 15 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0015.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 16 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0016.mp4'                                          
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 17: FadeOut(VGroup of 120 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 17: FadeOut(VGroup of 120 submobjects), etc.:  27%|██▋       | 4/15 [00:00<00:00, 30.43it/s]Animation 17: FadeOut(VGroup of 120 submobjects), etc.:  53%|█████▎    | 8/15 [00:00<00:00, 32.25it/s]Animation 17: FadeOut(VGroup of 120 submobjects), etc.:  80%|████████  | 12/15 [00:00<00:00, 29.58it/s]                                                                                                       [11/03/26 07:18:49] INFO     Animation 17 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S1_Intro/uncached_0                         
+                             0017.mp4'                                          
+                    INFO     Combining to Movie file.   scene_file_writer.py:877
+[11/03/26 07:18:50] WARNING  Some options were not      scene_file_writer.py:944
+                             used: {'shortest': '1',                            
+                             'metadata':                                        
+                             'comment=Rendered with                             
+                             Manim Community v0.22.1'}                          
+                    INFO                                scene_file_writer.py:999
+                             File ready at                                      
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/S1_Intro.mp4'                         
+                                                                                
+                    INFO     Rendered S1_Intro                    manager.py:226
+                             Played 18 animations                               

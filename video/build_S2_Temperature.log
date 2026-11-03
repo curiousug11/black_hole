@@ -1,0 +1,276 @@
+Manim Community v0.22.1
+
+[11/03/26 07:18:52] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 0: FadeIn(Text('1.  A thin disk')), etc.:   0%|          | 0/38 [00:00<?, ?it/s]Animation 0: FadeIn(Text('1.  A thin disk')), etc.:  79%|███████▉  | 30/38 [00:00<00:00, 291.66it/s]                                                                                                                        INFO     Animation 0 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00000.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 1: FadeIn(VGroup of 10 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]                                                                                                         INFO     Animation 1 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00001.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Waiting 2:   0%|          | 0/95 [00:00<?, ?it/s]Waiting 2:  35%|███▍      | 33/95 [00:00<00:00, 322.35it/s]Waiting 2:  69%|██████▉   | 66/95 [00:00<00:00, 227.99it/s]Waiting 2:  96%|█████████▌| 91/95 [00:00<00:00, 217.47it/s]                                                           [11/03/26 07:18:53] INFO     Animation 2 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00002.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 3: Transform(VGroup of 10 submobjects), etc.:   0%|          | 0/68 [00:00<?, ?it/s]Animation 3: Transform(VGroup of 10 submobjects), etc.:  19%|█▉        | 13/68 [00:00<00:00, 129.76it/s]Animation 3: Transform(VGroup of 10 submobjects), etc.:  38%|███▊      | 26/68 [00:00<00:00, 123.35it/s]Animation 3: Transform(VGroup of 10 submobjects), etc.:  59%|█████▉    | 40/68 [00:00<00:00, 129.40it/s]Animation 3: Transform(VGroup of 10 submobjects), etc.:  78%|███████▊  | 53/68 [00:00<00:00, 127.80it/s]Animation 3: Transform(VGroup of 10 submobjects), etc.:  99%|█████████▊| 67/68 [00:00<00:00, 129.68it/s]                                                                                                                            INFO     Animation 3 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00003.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 4: LaggedStart(Group):   0%|          | 0/46 [00:00<?, ?it/s]Animation 4: LaggedStart(Group):  39%|███▉      | 18/46 [00:00<00:00, 177.46it/s]Animation 4: LaggedStart(Group):  78%|███████▊  | 36/46 [00:00<00:00, 153.73it/s]                                                                                 [11/03/26 07:18:54] INFO     Animation 4 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00004.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Waiting 5:   0%|          | 0/42 [00:00<?, ?it/s]Waiting 5:  38%|███▊      | 16/42 [00:00<00:00, 159.12it/s]Waiting 5:  76%|███████▌  | 32/42 [00:00<00:00, 158.05it/s]                                                                               INFO     Animation 5 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00005.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 6: FadeOut(VGroup of 18 submobjects), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 6: FadeOut(VGroup of 18 submobjects), etc.:  61%|██████    | 14/23 [00:00<00:00, 133.37it/s]                                                                                                      [11/03/26 07:18:55] INFO     Animation 6 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00006.mp4'                                    
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\sigma                             
+                             T^4(r)\special{dvisvgm:raw                         
+                             </g>} to                                           
+                             video/build/media_lq/Tex/73                        
+                             f6a1957491aa29.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\sigma                             
+                             T^4(r) \special{dvisvgm:raw                        
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\frac{3GM\d                        
+                             ot M}{8\pi r^3}                                    
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\left[1-\sq                        
+                             rt{\frac{r_{\rm                                    
+                             in}}{r}}\,\right]\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/e2                        
+                             fac256b64c132a.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 7: Write(MathTex('\\sigma T^4(r) = \\frac{3GM\\dot M}{8\\pi r^3} \\left[1-\\sqrt{\\frac{r_{\\rm in}}{r}}\\,\\right]')):   0%|          | 0/51 [00:00<?, ?it/s]Animation 7: Write(MathTex('\\sigma T^4(r) = \\frac{3GM\\dot M}{8\\pi r^3} \\left[1-\\sqrt{\\frac{r_{\\rm in}}{r}}\\,\\right]')):  45%|████▌     | 23/51 [00:00<00:00, 220.90it/s]Animation 7: Write(MathTex('\\sigma T^4(r) = \\frac{3GM\\dot M}{8\\pi r^3} \\left[1-\\sqrt{\\frac{r_{\\rm in}}{r}}\\,\\right]')):  90%|█████████ | 46/51 [00:00<00:00, 218.16it/s]                                                                                                                                                                                  [11/03/26 07:18:56] INFO     Animation 7 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00007.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 8: GrowFromCenter(Brace), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: GrowFromCenter(Brace), etc.:  87%|████████▋ | 20/23 [00:00<00:00, 197.95it/s]                                                                                                              INFO     Animation 8 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00008.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 9 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00009.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 10: FadeOut(VGroup of 4 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]                                                                                                         INFO     Animation 10 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00010.mp4'                                    
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{1}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/bc                        
+                             20650472f160f0.tex                                 
+[11/03/26 07:18:57] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{2}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/80                        
+                             5a7c7586c69926.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{3}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/2b                        
+                             0ad71d07f17e6e.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{4}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/50                        
+                             b5fbb8eea098bf.tex                                 
+[11/03/26 07:18:58] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{5}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/97                        
+                             c76ff5c163a929.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}r\ \                               
+                             [GM/c^2]\special{dvisvgm:ra                        
+                             w </g>} to                                         
+                             video/build/media_lq/Tex/4e                        
+                             c0d5e2019988a2.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T\ [{\rm                           
+                             K}]\special{dvisvgm:raw                            
+                             </g>} to                                           
+                             video/build/media_lq/Tex/27                        
+                             3ffdf8ebe68657.tex                                 
+[11/03/26 07:18:59] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{6}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/be                        
+                             0e22176c75aa0c.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{7}\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             video/build/media_lq/Tex/ac                        
+                             3fcc7098609c92.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 11: Create(Axes of 5 submobjects), etc.:   0%|          | 0/18 [00:00<?, ?it/s]                                                                                         [11/03/26 07:19:00] INFO     Animation 11 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00011.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 12: Create(VMobject):   0%|          | 0/58 [00:00<?, ?it/s]Animation 12: Create(VMobject):  88%|████████▊ | 51/58 [00:00<00:00, 435.72it/s]                                                                                                    INFO     Animation 12 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00012.mp4'                                    
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T\propto                           
+                             r^{-3/4}\special{dvisvgm:ra                        
+                             w </g>} to                                         
+                             video/build/media_lq/Tex/1d                        
+                             8c32e5c56ef2d4.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 13: Create(DashedVMobject), etc.:   0%|          | 0/38 [00:00<?, ?it/s]Animation 13: Create(DashedVMobject), etc.:  21%|██        | 8/38 [00:00<00:00, 73.39it/s]Animation 13: Create(DashedVMobject), etc.:  45%|████▍     | 17/38 [00:00<00:00, 75.47it/s]Animation 13: Create(DashedVMobject), etc.:  66%|██████▌   | 25/38 [00:00<00:00, 76.73it/s]Animation 13: Create(DashedVMobject), etc.:  89%|████████▉ | 34/38 [00:00<00:00, 81.57it/s]                                                                                           [11/03/26 07:19:01] INFO     Animation 13 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00013.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 14: Create(DashedLine), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 14: Create(DashedLine), etc.:  70%|██████▉   | 16/23 [00:00<00:00, 159.98it/s]                                                                                                            INFO     Animation 14 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00014.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 15 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00015.mp4'                                    
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T_{\max}\                          
+                             \text{at}\                                         
+                             r=\tfrac{49}{36}\,r_{\rm                           
+                             in}\special{dvisvgm:raw                            
+                             </g>} to                                           
+                             video/build/media_lq/Tex/ef                        
+                             4e7184c4f433c4.tex                                 
+[11/03/26 07:19:02] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 16: GrowFromCenter(Dot), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 16: GrowFromCenter(Dot), etc.: 100%|██████████| 30/30 [00:00<00:00, 292.88it/s]                                                                                                             INFO     Animation 16 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00016.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 17: Flash(VGroup of 12 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]                                                                                                         INFO     Animation 17 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00017.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 18 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00018.mp4'                                    
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 19: FadeOut(Text('1.  A thin disk')), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 19: FadeOut(Text('1.  A thin disk')), etc.:  33%|███▎      | 5/15 [00:00<00:00, 42.51it/s]Animation 19: FadeOut(Text('1.  A thin disk')), etc.:  67%|██████▋   | 10/15 [00:00<00:00, 42.31it/s]Animation 19: FadeOut(Text('1.  A thin disk')), etc.: 100%|██████████| 15/15 [00:00<00:00, 40.65it/s]                                                                                                     [11/03/26 07:19:03] INFO     Animation 19 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S2_Temperature/unca                         
+                             ched_00019.mp4'                                    
+                    INFO     Combining to Movie file.   scene_file_writer.py:877
+[11/03/26 07:19:05] WARNING  Some options were not      scene_file_writer.py:944
+                             used: {'shortest': '1',                            
+                             'metadata':                                        
+                             'comment=Rendered with                             
+                             Manim Community v0.22.1'}                          
+                    INFO                                scene_file_writer.py:999
+                             File ready at                                      
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/S2_Temperatur                         
+                             e.mp4'                                             
+                                                                                
+                    INFO     Rendered S2_Temperature              manager.py:226
+                             Played 20 animations                               

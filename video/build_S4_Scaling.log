@@ -1,0 +1,1266 @@
+Manim Community v0.22.1
+
+[11/03/26 07:19:23] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T_{\max}                           
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}\propto                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\left(\frac                        
+                             {\dot                                              
+                             M}{M^2}\right)^{1/4}\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             video/build/media_lq/Tex/04                        
+                             b8f160d66d8ceb.tex                                 
+[11/03/26 07:19:24] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 0: FadeIn(Text('3.  Mass and accretion rate')), etc.:   0%|          | 0/72 [00:00<?, ?it/s]Animation 0: FadeIn(Text('3.  Mass and accretion rate')), etc.:  25%|██▌       | 18/72 [00:00<00:00, 174.84it/s]Animation 0: FadeIn(Text('3.  Mass and accretion rate')), etc.:  50%|█████     | 36/72 [00:00<00:00, 162.08it/s]Animation 0: FadeIn(Text('3.  Mass and accretion rate')), etc.:  74%|███████▎  | 53/72 [00:00<00:00, 162.61it/s]Animation 0: FadeIn(Text('3.  Mass and accretion rate')), etc.:  97%|█████████▋| 70/72 [00:00<00:00, 154.49it/s]                                                                                                                                    INFO     Animation 0 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00000.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 1: Circumscribe(Group):   0%|          | 0/30 [00:00<?, ?it/s]                                                                                            INFO     Animation 1 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00001.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+[11/03/26 07:19:25] INFO     Animation 2 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00002.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\text{same                         
+                             } L/L_{\rm Edd}:\quad \dot                         
+                             M\propto                                           
+                             M\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             video/build/media_lq/Tex/7e                        
+                             c61d88e2ffd1b7.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 3: FadeIn(MathTex('\\text{same } L/L_{\\rm Edd}:\\quad \\dot M\\propto M')):   0%|          | 0/53 [00:00<?, ?it/s]Animation 3: FadeIn(MathTex('\\text{same } L/L_{\\rm Edd}:\\quad \\dot M\\propto M')):  47%|████▋     | 25/53 [00:00<00:00, 243.58it/s]Animation 3: FadeIn(MathTex('\\text{same } L/L_{\\rm Edd}:\\quad \\dot M\\propto M')):  96%|█████████▌| 51/53 [00:00<00:00, 236.20it/s]                                                                                                                                                           INFO     Animation 3 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00003.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T_{\max}                           
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}\propto                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}M^{-1/4}\sp                        
+                             ecial{dvisvgm:raw </g>} to                         
+                             video/build/media_lq/Tex/07                        
+                             c7ba1e0636b1d9.tex                                 
+[11/03/26 07:19:26] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 4: TransformMatchingTex(Group):   0%|          | 0/38 [00:00<?, ?it/s]Animation 4: TransformMatchingTex(Group):  58%|█████▊    | 22/38 [00:00<00:00, 212.34it/s]                                                                                                              INFO     Animation 4 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00004.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 5: Write(Text('Bigger black holes have cooler disks')):   0%|          | 0/110 [00:00<?, ?it/s]Animation 5: Write(Text('Bigger black holes have cooler disks')):  17%|█▋        | 19/110 [00:00<00:00, 189.66it/s]Animation 5: Write(Text('Bigger black holes have cooler disks')):  35%|███▍      | 38/110 [00:00<00:00, 166.21it/s]Animation 5: Write(Text('Bigger black holes have cooler disks')):  52%|█████▏    | 57/110 [00:00<00:00, 173.17it/s]Animation 5: Write(Text('Bigger black holes have cooler disks')):  68%|██████▊   | 75/110 [00:00<00:00, 171.90it/s]Animation 5: Write(Text('Bigger black holes have cooler disks')):  85%|████████▌ | 94/110 [00:00<00:00, 175.37it/s]                                                                                                                   [11/03/26 07:19:27] INFO     Animation 5 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00005.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 6 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00006.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 7: FadeOut(MathTex('\\text{same } L/L_{\\rm Edd}:\\quad \\dot M\\propto M')), etc.:   0%|          | 0/18 [00:00<?, ?it/s]Animation 7: FadeOut(MathTex('\\text{same } L/L_{\\rm Edd}:\\quad \\dot M\\propto M')), etc.:  61%|██████    | 11/18 [00:00<00:00, 105.64it/s]                                                                                                                                                                  INFO     Animation 7 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00007.mp4'                                        
+/home/user/black_hole/video/scenes.py:430: RuntimeWarning: divide by zero encountered in log10
+  lL0 = np.log10(DATA["sc_nuL"])
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{10}\spe                        
+                             cial{dvisvgm:raw </g>} to                          
+                             video/build/media_lq/Tex/d5                        
+                             7d3c734e4cf662.tex                                 
+[11/03/26 07:19:28] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\nu                                
+                             L_\nu\special{dvisvgm:raw                          
+                             </g>} to                                           
+                             video/build/media_lq/Tex/f7                        
+                             f92ccf2874c608.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/72                        
+                             b299dc243e53d7.tex                                 
+[11/03/26 07:19:29] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 8: Create(Axes of 5 submobjects), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: Create(Axes of 5 submobjects), etc.:  65%|██████▌   | 15/23 [00:00<00:00, 142.93it/s]                                                                                                                      INFO     Animation 8 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00008.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 9: _MethodAnimation(ValueTracker):   0%|          | 0/94 [00:00<?, ?it/s]Animation 9: _MethodAnimation(ValueTracker):   5%|▌         | 5/94 [00:00<00:02, 41.68it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/d8                        
+                             fa4311de3e9250.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/45                        
+                             5b4fd975314346.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  11%|█         | 10/94 [00:00<00:07, 11.08it/s][11/03/26 07:19:30] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/53                        
+                             696a949b9944ac.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  14%|█▍        | 13/94 [00:01<00:08,  9.51it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/74                        
+                             c33f436aef555c.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  16%|█▌        | 15/94 [00:01<00:09,  8.04it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/31                        
+                             5656201063ff92.tex                                 
+[11/03/26 07:19:31] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/8c                        
+                             bb6f39cfb739a1.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  18%|█▊        | 17/94 [00:02<00:13,  5.60it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/7f                        
+                             efabc18b4d8afd.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  20%|██        | 19/94 [00:02<00:13,  5.60it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.8}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/c7                        
+                             9c196215ba77c3.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  21%|██▏       | 20/94 [00:02<00:14,  4.97it/s][11/03/26 07:19:32] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{1.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/e7                        
+                             0fbc814765e5d8.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  22%|██▏       | 21/94 [00:03<00:16,  4.35it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/cf                        
+                             3de98490a865d2.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  23%|██▎       | 22/94 [00:03<00:18,  3.98it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/6c                        
+                             65afe4dd934215.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  24%|██▍       | 23/94 [00:03<00:19,  3.68it/s][11/03/26 07:19:33] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/60                        
+                             bdb39aeffe009a.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  27%|██▋       | 25/94 [00:04<00:16,  4.21it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/a1                        
+                             eb3a86616dfd1c.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  28%|██▊       | 26/94 [00:04<00:17,  3.91it/s][11/03/26 07:19:34] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/ee                        
+                             e484db58148573.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  29%|██▊       | 27/94 [00:04<00:17,  3.74it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/66                        
+                             4b2d0212e6e4ee.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  30%|██▉       | 28/94 [00:05<00:18,  3.51it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/57                        
+                             7a30fe6d3a5d4e.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  31%|███       | 29/94 [00:05<00:19,  3.25it/s][11/03/26 07:19:35] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.8}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/5b                        
+                             6d9e96207b675a.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  32%|███▏      | 30/94 [00:05<00:20,  3.18it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{2.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/f7                        
+                             fe2c25bd2fbc5b.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  33%|███▎      | 31/94 [00:06<00:19,  3.17it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/74                        
+                             9fafb6f6080cb5.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  34%|███▍      | 32/94 [00:06<00:20,  3.10it/s][11/03/26 07:19:36] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/0c                        
+                             084bfe2de1e5d7.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  35%|███▌      | 33/94 [00:06<00:19,  3.06it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/56                        
+                             526dbc3657f52d.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  36%|███▌      | 34/94 [00:07<00:21,  2.77it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/4e                        
+                             d8ac332216bd2f.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  37%|███▋      | 35/94 [00:07<00:20,  2.89it/s][11/03/26 07:19:37] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/d4                        
+                             9be61234aebdc0.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  38%|███▊      | 36/94 [00:08<00:20,  2.82it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/64                        
+                             c6e05c847f71a0.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  39%|███▉      | 37/94 [00:08<00:19,  2.86it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/45                        
+                             4a6cc55a2bec22.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  40%|████      | 38/94 [00:08<00:19,  2.89it/s][11/03/26 07:19:38] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{3.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/1b                        
+                             90cdc711b652cb.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  41%|████▏     | 39/94 [00:09<00:19,  2.88it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/14                        
+                             f2f9670896a2b6.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  43%|████▎     | 40/94 [00:09<00:18,  2.91it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/17                        
+                             c4ba9fdcf5f8c7.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  44%|████▎     | 41/94 [00:09<00:18,  2.87it/s][11/03/26 07:19:39] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/b5                        
+                             36eb8f784ca2de.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  45%|████▍     | 42/94 [00:10<00:18,  2.87it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/74                        
+                             183f585f8e26b4.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  46%|████▌     | 43/94 [00:10<00:17,  2.84it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/64                        
+                             7626d12035f04f.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  47%|████▋     | 44/94 [00:10<00:18,  2.78it/s][11/03/26 07:19:40] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/e6                        
+                             bb03b60f15f833.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  48%|████▊     | 45/94 [00:11<00:17,  2.76it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.8}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/0e                        
+                             fb364ee53a2353.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  49%|████▉     | 46/94 [00:11<00:17,  2.76it/s][11/03/26 07:19:41] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{4.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/1c                        
+                             59fed52a768330.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  50%|█████     | 47/94 [00:11<00:16,  2.80it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/73                        
+                             0f33d825ded163.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  51%|█████     | 48/94 [00:12<00:16,  2.81it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/9c                        
+                             354e460021645f.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  52%|█████▏    | 49/94 [00:12<00:15,  2.89it/s][11/03/26 07:19:42] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/3e                        
+                             ae64008feda9e3.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  53%|█████▎    | 50/94 [00:13<00:15,  2.83it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/7d                        
+                             ca49db729a457d.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  54%|█████▍    | 51/94 [00:13<00:15,  2.73it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/83                        
+                             61e0bac9d146d9.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  55%|█████▌    | 52/94 [00:13<00:15,  2.73it/s][11/03/26 07:19:43] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/4e                        
+                             ca5b245e1f1d7d.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  56%|█████▋    | 53/94 [00:14<00:15,  2.73it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{5.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/5b                        
+                             59aec7114ca7ff.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  57%|█████▋    | 54/94 [00:14<00:14,  2.71it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/10                        
+                             7d86777e680d3e.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  59%|█████▊    | 55/94 [00:14<00:13,  2.79it/s][11/03/26 07:19:44] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/92                        
+                             60698a2bdcdaa8.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  60%|█████▉    | 56/94 [00:15<00:13,  2.81it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/d3                        
+                             d6885decc2540e.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  61%|██████    | 57/94 [00:15<00:12,  2.86it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/55                        
+                             daec78d0778a12.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  62%|██████▏   | 58/94 [00:15<00:12,  2.92it/s][11/03/26 07:19:45] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/30                        
+                             d0397dba6a659e.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  63%|██████▎   | 59/94 [00:16<00:12,  2.89it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/84                        
+                             318da85de7db43.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  64%|██████▍   | 60/94 [00:16<00:11,  2.90it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/9f                        
+                             dfcd45fade820c.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  65%|██████▍   | 61/94 [00:16<00:11,  2.92it/s][11/03/26 07:19:46] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{6.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/f2                        
+                             4e1750464e00f3.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  66%|██████▌   | 62/94 [00:17<00:10,  2.96it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/0e                        
+                             5b6a65007d08bf.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  67%|██████▋   | 63/94 [00:17<00:10,  2.90it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/7a                        
+                             aa08ea0a51c097.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  68%|██████▊   | 64/94 [00:17<00:10,  2.98it/s][11/03/26 07:19:47] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/55                        
+                             8307c1c51a9d92.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  69%|██████▉   | 65/94 [00:18<00:09,  2.99it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/80                        
+                             99fb71918d15ad.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  70%|███████   | 66/94 [00:18<00:09,  3.05it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/5e                        
+                             e7dbbf0a6db36b.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  71%|███████▏  | 67/94 [00:18<00:08,  3.04it/s][11/03/26 07:19:48] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/62                        
+                             b7dcc118272949.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  72%|███████▏  | 68/94 [00:19<00:08,  2.94it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/f2                        
+                             f21e0ca5d39f0b.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  73%|███████▎  | 69/94 [00:19<00:08,  2.94it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/6f                        
+                             ad99b9d8776506.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  74%|███████▍  | 70/94 [00:19<00:08,  2.95it/s][11/03/26 07:19:49] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.8}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/f2                        
+                             437d5b5ce46d6c.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  76%|███████▌  | 71/94 [00:20<00:08,  2.76it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{7.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/2d                        
+                             25ab91a211b9d9.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  77%|███████▋  | 72/94 [00:20<00:07,  2.78it/s][11/03/26 07:19:50] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/54                        
+                             c67df02640b63c.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  78%|███████▊  | 73/94 [00:21<00:07,  2.79it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.1}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/c8                        
+                             d6e9ecdd011e39.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  79%|███████▊  | 74/94 [00:21<00:07,  2.79it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.2}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/23                        
+                             00ab7417aadaaa.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  80%|███████▉  | 75/94 [00:21<00:06,  2.78it/s][11/03/26 07:19:51] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.3}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/82                        
+                             408e3afdc9f050.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  81%|████████  | 76/94 [00:22<00:06,  2.68it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.4}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/87                        
+                             3d92975c98f493.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  83%|████████▎ | 78/94 [00:22<00:04,  3.42it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.5}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/91                        
+                             261e8dfd2a3f25.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  84%|████████▍ | 79/94 [00:22<00:04,  3.24it/s][11/03/26 07:19:52] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.6}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/8f                        
+                             b020b722fca45d.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  85%|████████▌ | 80/94 [00:23<00:04,  3.18it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.7}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/6a                        
+                             9395a43d3be806.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  87%|████████▋ | 82/94 [00:23<00:03,  3.85it/s][11/03/26 07:19:53] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.8}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/4e                        
+                             87f1da194ce7a4.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  89%|████████▉ | 84/94 [00:24<00:02,  4.26it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{8.9}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/e9                        
+                             a793497cf634ab.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  93%|█████████▎| 87/94 [00:24<00:01,  4.99it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}M =                                
+                             10^{9.0}\,M_\odot\special{d                        
+                             visvgm:raw </g>} to                                
+                             video/build/media_lq/Tex/5b                        
+                             c14e7f0eb37af1.tex                                 
+Animation 9: _MethodAnimation(ValueTracker):  96%|█████████▌| 90/94 [00:24<00:00,  5.57it/s]Animation 9: _MethodAnimation(ValueTracker):  99%|█████████▉| 93/94 [00:25<00:00,  7.69it/s]                                                                                            [11/03/26 07:19:54] INFO     Animation 9 : Partial      scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00009.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+                    INFO     Animation 10 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00010.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 11: FadeOut(VMobject), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 11: FadeOut(VMobject), etc.:   9%|▊         | 2/23 [00:00<00:02,  9.62it/s]Animation 11: FadeOut(VMobject), etc.:  13%|█▎        | 3/23 [00:00<00:02,  6.83it/s]Animation 11: FadeOut(VMobject), etc.:  17%|█▋        | 4/23 [00:00<00:02,  7.64it/s]Animation 11: FadeOut(VMobject), etc.:  22%|██▏       | 5/23 [00:00<00:02,  8.22it/s]Animation 11: FadeOut(VMobject), etc.:  30%|███       | 7/23 [00:00<00:01,  9.14it/s]Animation 11: FadeOut(VMobject), etc.:  35%|███▍      | 8/23 [00:00<00:01,  9.12it/s]Animation 11: FadeOut(VMobject), etc.:  39%|███▉      | 9/23 [00:01<00:01,  9.15it/s]Animation 11: FadeOut(VMobject), etc.:  43%|████▎     | 10/23 [00:01<00:01,  9.14it/s]Animation 11: FadeOut(VMobject), etc.:  48%|████▊     | 11/23 [00:01<00:01,  9.36it/s]Animation 11: FadeOut(VMobject), etc.:  57%|█████▋    | 13/23 [00:01<00:01,  9.71it/s]Animation 11: FadeOut(VMobject), etc.:  65%|██████▌   | 15/23 [00:01<00:00,  9.82it/s]Animation 11: FadeOut(VMobject), etc.:  70%|██████▉   | 16/23 [00:01<00:00,  9.85it/s]Animation 11: FadeOut(VMobject), etc.:  74%|███████▍  | 17/23 [00:01<00:00,  9.82it/s]Animation 11: FadeOut(VMobject), etc.:  78%|███████▊  | 18/23 [00:01<00:00,  9.82it/s]Animation 11: FadeOut(VMobject), etc.:  83%|████████▎ | 19/23 [00:02<00:00,  9.68it/s]Animation 11: FadeOut(VMobject), etc.:  87%|████████▋ | 20/23 [00:02<00:00,  9.35it/s]Animation 11: FadeOut(VMobject), etc.:  96%|█████████▌| 22/23 [00:02<00:00,  9.62it/s]                                                                                      [11/03/26 07:19:57] INFO     Animation 11 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00011.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10\,M_\odot                        
+                             \special{dvisvgm:raw </g>}                         
+                             to                                                 
+                             video/build/media_lq/Tex/ab                        
+                             bd7010d12d97e1.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\approx                            
+                             0.9\ {\rm                                          
+                             keV}\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/22                        
+                             2701a9c4c83a83.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}10^{8}\,M_\                        
+                             odot\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/88                        
+                             668e492bb6805f.tex                                 
+[11/03/26 07:19:58] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\approx                            
+                             742\                                               
+                             \text{\AA}\special{dvisvgm:                        
+                             raw </g>} to                                       
+                             video/build/media_lq/Tex/9e                        
+                             06067616fa1cbd.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 12: FadeIn(Dot), etc.:   0%|          | 0/44 [00:00<?, ?it/s]Animation 12: FadeIn(Dot), etc.:  68%|██████▊   | 30/44 [00:00<00:00, 299.90it/s]                                                                                                     INFO     Animation 12 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00012.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 13: FadeIn(Dot), etc.:   0%|          | 0/44 [00:00<?, ?it/s]Animation 13: FadeIn(Dot), etc.:  64%|██████▎   | 28/44 [00:00<00:00, 272.52it/s]                                                                                 [11/03/26 07:19:59] INFO     Animation 13 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00013.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\times 56 =                        
+                             \left(10^{7}\right)^{1/4}\s                        
+                             pecial{dvisvgm:raw </g>} to                        
+                             video/build/media_lq/Tex/77                        
+                             126519d7cf78f6.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 14: Create(DashedLine), etc.:   0%|          | 0/59 [00:00<?, ?it/s]Animation 14: Create(DashedLine), etc.:  37%|███▋      | 22/59 [00:00<00:00, 213.33it/s]Animation 14: Create(DashedLine), etc.:  75%|███████▍  | 44/59 [00:00<00:00, 214.04it/s]                                                                                                            INFO     Animation 14 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00014.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+[11/03/26 07:20:00] INFO     Animation 15 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00015.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 16: FadeOut(VMobject), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 16: FadeOut(VMobject), etc.:  60%|██████    | 9/15 [00:00<00:00, 78.45it/s]                                                                                                         INFO     Animation 16 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00016.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.01\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/d5                        
+                             4ab8a20cb31f69.tex                                 
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L\propto\do                        
+                             t M,\qquad \nu_{\rm                                
+                             peak}\propto\dot                                   
+                             M^{1/4}\special{dvisvgm:raw                        
+                             </g>} to                                           
+                             video/build/media_lq/Tex/83                        
+                             c71d5f0eabb4ad.tex                                 
+[11/03/26 07:20:01] INFO     Caching disabled.              cairo_renderer.py:89
+Animation 17: FadeIn(MathTex('L\\propto\\dot M,\\qquad \\nu_{\\rm peak}\\propto\\dot M^{1/4}')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 17: FadeIn(MathTex('L\\propto\\dot M,\\qquad \\nu_{\\rm peak}\\propto\\dot M^{1/4}')):  27%|██▋       | 4/15 [00:00<00:00, 39.83it/s]Animation 17: FadeIn(MathTex('L\\propto\\dot M,\\qquad \\nu_{\\rm peak}\\propto\\dot M^{1/4}')):  60%|██████    | 9/15 [00:00<00:00, 40.04it/s]Animation 17: FadeIn(MathTex('L\\propto\\dot M,\\qquad \\nu_{\\rm peak}\\propto\\dot M^{1/4}')):  93%|█████████▎| 14/15 [00:00<00:00, 26.99it/s]                                                                                                                                                                    INFO     Animation 17 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00017.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 18: _MethodAnimation(ValueTracker):   0%|          | 0/104 [00:00<?, ?it/s]Animation 18: _MethodAnimation(ValueTracker):   4%|▍         | 4/104 [00:00<00:02, 38.00it/s]Animation 18: _MethodAnimation(ValueTracker):   8%|▊         | 8/104 [00:00<00:02, 38.69it/s]Animation 18: _MethodAnimation(ValueTracker):  12%|█▏        | 12/104 [00:00<00:02, 39.25it/s]Animation 18: _MethodAnimation(ValueTracker):  15%|█▌        | 16/104 [00:00<00:02, 37.69it/s]Animation 18: _MethodAnimation(ValueTracker):  19%|█▉        | 20/104 [00:00<00:02, 37.98it/s][11/03/26 07:20:02] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.02\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/3f                        
+                             c4008158d0b981.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  23%|██▎       | 24/104 [00:00<00:04, 18.54it/s]Animation 18: _MethodAnimation(ValueTracker):  27%|██▋       | 28/104 [00:01<00:03, 22.37it/s][11/03/26 07:20:03] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.03\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/83                        
+                             093a78a1d00165.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  31%|███       | 32/104 [00:01<00:04, 15.87it/s]Animation 18: _MethodAnimation(ValueTracker):  34%|███▎      | 35/104 [00:01<00:03, 17.97it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.04\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/e9                        
+                             6a4f9b4ca82ebd.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  37%|███▋      | 38/104 [00:01<00:04, 13.26it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.05\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/52                        
+                             6c92aef20a3a40.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  40%|████      | 42/104 [00:02<00:05, 11.80it/s][11/03/26 07:20:04] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.06\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/12                        
+                             2e7b1583b3a836.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  43%|████▎     | 45/104 [00:02<00:05, 10.44it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.07\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/07                        
+                             ea65463a6d1aae.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  45%|████▌     | 47/104 [00:03<00:06,  8.85it/s][11/03/26 07:20:05] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.08\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/b1                        
+                             98e8d3bced5475.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  47%|████▋     | 49/104 [00:03<00:06,  7.96it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.09\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/74                        
+                             291c706bd678fa.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  49%|████▉     | 51/104 [00:03<00:07,  7.16it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.10\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/a5                        
+                             824f5130d7cc61.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  51%|█████     | 53/104 [00:04<00:07,  6.85it/s][11/03/26 07:20:06] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.11\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/01                        
+                             d7eb7caf69cf03.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  52%|█████▏    | 54/104 [00:04<00:08,  5.74it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.12\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/2f                        
+                             35eba8bf188685.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  53%|█████▎    | 55/104 [00:04<00:09,  4.91it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.13\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/50                        
+                             415a5e07ee271a.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  54%|█████▍    | 56/104 [00:05<00:11,  4.22it/s][11/03/26 07:20:07] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.14\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/80                        
+                             31f569257cf7b1.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  56%|█████▌    | 58/104 [00:05<00:09,  4.66it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.15\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/9d                        
+                             49e45f23d31091.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  57%|█████▋    | 59/104 [00:05<00:10,  4.21it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.17\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/84                        
+                             d7e412d8f27b5d.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  58%|█████▊    | 60/104 [00:06<00:11,  3.82it/s][11/03/26 07:20:08] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.18\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/81                        
+                             c0c89568c94690.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  59%|█████▊    | 61/104 [00:06<00:12,  3.54it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.19\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/9a                        
+                             dd278f1a8f74a0.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  60%|█████▉    | 62/104 [00:06<00:12,  3.34it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.20\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/1c                        
+                             dc26e60f1d7076.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  61%|██████    | 63/104 [00:07<00:12,  3.24it/s][11/03/26 07:20:09] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.22\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/af                        
+                             590bc424981e02.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  62%|██████▏   | 64/104 [00:07<00:12,  3.09it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.23\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/18                        
+                             17ecfe94da3804.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  62%|██████▎   | 65/104 [00:07<00:13,  3.00it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.25\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/98                        
+                             c09023a3e539ec.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  63%|██████▎   | 66/104 [00:08<00:12,  3.02it/s][11/03/26 07:20:10] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.26\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/2f                        
+                             2cbd0be85a888e.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  64%|██████▍   | 67/104 [00:08<00:12,  3.00it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.28\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/19                        
+                             f2fa1aa4e32545.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  65%|██████▌   | 68/104 [00:08<00:12,  2.96it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.30\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/a2                        
+                             4c735d518044e8.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  66%|██████▋   | 69/104 [00:09<00:11,  2.93it/s][11/03/26 07:20:11] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.32\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/d1                        
+                             6942e4b89df360.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  67%|██████▋   | 70/104 [00:09<00:11,  2.90it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.34\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/54                        
+                             19df94bae7e9bd.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  68%|██████▊   | 71/104 [00:09<00:11,  2.91it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.36\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/43                        
+                             761ebc2215a564.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  69%|██████▉   | 72/104 [00:10<00:11,  2.88it/s][11/03/26 07:20:12] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.38\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/5c                        
+                             0a4237006f72a4.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  70%|███████   | 73/104 [00:10<00:10,  2.91it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.40\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/3a                        
+                             edbda8bdf6c2e8.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  71%|███████   | 74/104 [00:11<00:10,  2.89it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.42\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/4f                        
+                             c1e344d7970192.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  72%|███████▏  | 75/104 [00:11<00:10,  2.86it/s][11/03/26 07:20:13] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.45\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/9d                        
+                             21b707861f789a.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  73%|███████▎  | 76/104 [00:11<00:09,  2.84it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.47\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/21                        
+                             661bfc7651eaf3.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  74%|███████▍  | 77/104 [00:12<00:09,  2.82it/s][11/03/26 07:20:14] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.49\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/06                        
+                             6836b2cf0b7846.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  75%|███████▌  | 78/104 [00:12<00:09,  2.83it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.52\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/92                        
+                             8d5cd41237bfeb.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  76%|███████▌  | 79/104 [00:12<00:08,  2.88it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.54\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/aa                        
+                             d6d877dc44beb5.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  77%|███████▋  | 80/104 [00:13<00:08,  2.99it/s][11/03/26 07:20:15] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.57\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/6e                        
+                             b1bd77dbe06841.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  78%|███████▊  | 81/104 [00:13<00:08,  2.67it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.60\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/17                        
+                             bf6d32a93a9ac1.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  79%|███████▉  | 82/104 [00:13<00:08,  2.69it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.62\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/a9                        
+                             ad29e94a076eb7.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  80%|███████▉  | 83/104 [00:14<00:07,  2.75it/s][11/03/26 07:20:16] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.65\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/9c                        
+                             49eefa9c804e07.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  81%|████████  | 84/104 [00:14<00:07,  2.75it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.68\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/8e                        
+                             2259b1b04bd8f1.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  82%|████████▏ | 85/104 [00:15<00:07,  2.67it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.70\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/39                        
+                             67733efb70a2a4.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  83%|████████▎ | 86/104 [00:15<00:06,  2.80it/s][11/03/26 07:20:17] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.73\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/b0                        
+                             4b5f87d8c9f33c.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  84%|████████▎ | 87/104 [00:15<00:06,  2.78it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.75\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/89                        
+                             ccf18a0f109e8f.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  85%|████████▍ | 88/104 [00:16<00:05,  2.83it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.78\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/02                        
+                             d93e8c0a5e10e9.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  86%|████████▌ | 89/104 [00:16<00:05,  2.89it/s][11/03/26 07:20:18] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.80\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/c9                        
+                             d5f73c22e65158.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  87%|████████▋ | 90/104 [00:16<00:04,  3.01it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.83\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/19                        
+                             dd8a615ee9c551.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  88%|████████▊ | 91/104 [00:17<00:04,  3.05it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.85\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/51                        
+                             bf311f6a02f884.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  88%|████████▊ | 92/104 [00:17<00:03,  3.10it/s][11/03/26 07:20:19] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.87\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/f1                        
+                             0389d2134cc820.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  89%|████████▉ | 93/104 [00:17<00:03,  3.03it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.89\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/20                        
+                             0aa93294a5602a.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  90%|█████████ | 94/104 [00:18<00:03,  2.96it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.91\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/01                        
+                             cf951f0de58e0f.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  91%|█████████▏| 95/104 [00:18<00:02,  3.01it/s][11/03/26 07:20:20] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.93\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/5f                        
+                             6dc8418dfaba5d.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  92%|█████████▏| 96/104 [00:18<00:02,  2.98it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.94\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/fa                        
+                             f57c092c9b2d6f.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  93%|█████████▎| 97/104 [00:19<00:02,  3.00it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.96\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/b9                        
+                             9957627ec8730e.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  94%|█████████▍| 98/104 [00:19<00:02,  2.95it/s][11/03/26 07:20:21] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.97\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/1c                        
+                             beb4183d80d37a.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  95%|█████████▌| 99/104 [00:19<00:01,  2.93it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.98\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/ea                        
+                             2e0d6eef798563.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  96%|█████████▌| 100/104 [00:20<00:01,  3.00it/s]                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             0.99\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/bf                        
+                             5431136d797dc9.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  97%|█████████▋| 101/104 [00:20<00:00,  3.05it/s][11/03/26 07:20:22] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}L/L_{\rm                           
+                             Edd} =                                             
+                             1.00\special{dvisvgm:raw                           
+                             </g>} to                                           
+                             video/build/media_lq/Tex/90                        
+                             ac34678e9c0686.tex                                 
+Animation 18: _MethodAnimation(ValueTracker):  99%|█████████▉| 103/104 [00:20<00:00,  3.82it/s]                                                                                                                   INFO     Animation 18 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00018.mp4'                                        
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\times                             
+                             100\special{dvisvgm:raw                            
+                             </g>} to                                           
+                             video/build/media_lq/Tex/e1                        
+                             e0f4d2d63d210b.tex                                 
+[11/03/26 07:20:23] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\times                             
+                             3\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             video/build/media_lq/Tex/dd                        
+                             c1692091249abd.tex                                 
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 19: GrowArrow(Arrow), etc.:   0%|          | 0/52 [00:00<?, ?it/s]Animation 19: GrowArrow(Arrow), etc.:   6%|▌         | 3/52 [00:00<00:01, 29.57it/s]Animation 19: GrowArrow(Arrow), etc.:  13%|█▎        | 7/52 [00:00<00:01, 30.89it/s]Animation 19: GrowArrow(Arrow), etc.:  21%|██        | 11/52 [00:00<00:01, 32.50it/s]Animation 19: GrowArrow(Arrow), etc.:  29%|██▉       | 15/52 [00:00<00:01, 33.63it/s]Animation 19: GrowArrow(Arrow), etc.:  37%|███▋      | 19/52 [00:00<00:00, 33.17it/s]Animation 19: GrowArrow(Arrow), etc.:  44%|████▍     | 23/52 [00:00<00:00, 33.28it/s]Animation 19: GrowArrow(Arrow), etc.:  52%|█████▏    | 27/52 [00:00<00:00, 33.89it/s]Animation 19: GrowArrow(Arrow), etc.:  60%|█████▉    | 31/52 [00:00<00:00, 33.94it/s]Animation 19: GrowArrow(Arrow), etc.:  67%|██████▋   | 35/52 [00:01<00:00, 33.83it/s]Animation 19: GrowArrow(Arrow), etc.:  75%|███████▌  | 39/52 [00:01<00:00, 33.45it/s]Animation 19: GrowArrow(Arrow), etc.:  83%|████████▎ | 43/52 [00:01<00:00, 32.54it/s]Animation 19: GrowArrow(Arrow), etc.:  90%|█████████ | 47/52 [00:01<00:00, 32.74it/s]Animation 19: GrowArrow(Arrow), etc.:  98%|█████████▊| 51/52 [00:01<00:00, 32.93it/s]                                                                                     [11/03/26 07:20:24] INFO     Animation 19 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00019.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+[11/03/26 07:20:25] INFO     Animation 20 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00020.mp4'                                        
+                    INFO     Caching disabled.              cairo_renderer.py:89
+Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  13%|█▎        | 2/15 [00:00<00:01, 10.94it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  27%|██▋       | 4/15 [00:00<00:01, 10.84it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  40%|████      | 6/15 [00:00<00:00, 11.10it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  53%|█████▎    | 8/15 [00:00<00:00, 11.21it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  67%|██████▋   | 10/15 [00:00<00:00, 11.23it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  80%|████████  | 12/15 [00:01<00:00, 11.12it/s]Animation 21: FadeOut(Text('3.  Mass and accretion rate')), etc.:  93%|█████████▎| 14/15 [00:01<00:00, 10.99it/s]                                                                                                                 [11/03/26 07:20:26] INFO     Animation 21 : Partial     scene_file_writer.py:173
+                             movie file written in                              
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/partial_movie                         
+                             _files/S4_Scaling/uncached                         
+                             _00021.mp4'                                        
+                    INFO     Combining to Movie file.   scene_file_writer.py:877
+[11/03/26 07:20:28] WARNING  Some options were not      scene_file_writer.py:944
+                             used: {'shortest': '1',                            
+                             'metadata':                                        
+                             'comment=Rendered with                             
+                             Manim Community v0.22.1'}                          
+                    INFO                                scene_file_writer.py:999
+                             File ready at                                      
+                             '/home/user/black_hole/vid                         
+                             eo/build/media_lq/videos/s                         
+                             cenes/480p15/S4_Scaling.mp                         
+                             4'                                                 
+                                                                                
+                    INFO     Rendered S4_Scaling                  manager.py:226
+                             Played 22 animations                               

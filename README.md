@@ -6,6 +6,14 @@ disk as a set of concentric rings. Each ring radiates as a blackbody at its
 local temperature, and the spectrum is the sum of the emission from all rings.
 The model is then used to compare stellar-mass and supermassive black holes.
 
+## Explainer video
+
+[`video/black_hole_disks.mp4`](video/black_hole_disks.mp4) is a ~6-minute
+narrated explainer of the project, in the style of 3Blue1Brown. It was animated
+with Manim and narrated with Kokoro TTS, and has subtitles in
+`video/black_hole_disks.srt`. Every curve in it is computed from this
+project's model and data. See [`video/README.md`](video/README.md) to rebuild it.
+
 ## Model and packages
 
 The physical model is the standard **Shakura & Sunyaev (1973) thin disk**: a
@@ -40,6 +48,7 @@ scripts/
   run_analysis.py    Parameter study: writes every figure and table
   fetch_observations.py    Downloads the observational data (see data/observations/)
   compare_observations.py  Compares the model with quasar and X-ray binary data
+video/               Narrated explainer video (Manim + Kokoro TTS) and its sources
 data/observations/   Real data: SDSS quasars and RXTE spectra of LMC X-3 (with provenance README)
 notebooks/
   accretion_disk_walkthrough.ipynb   Step-by-step walkthrough of the analysis
