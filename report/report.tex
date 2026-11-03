@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{siunitx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -59,9 +60,17 @@ at $\approx\SI{740}{\angstrom}$ (far ultraviolet). The two peaks differ by
 exactly $(10^7)^{1/4}\approx56$, reflecting the scaling
 $\Tmax\propto(\Mdot/M^2)^{1/4}$. The bolometric luminosity depends only on the
 accretion rate, $L=\Mdot c^2/12$, so the luminosity and the spectral peak
-together determine both $\Mdot$ and $M$. We discuss the limitations imposed by
-neglecting general-relativistic effects, non-blackbody radiative transfer and
-additional emission components.
+together determine both $\Mdot$ and $M$. We compare the model with real
+observations. In SDSS quasars it matches the average far-ultraviolet
+continuum slope but is too blue in the near-ultraviolet and optical, where
+86--88\% of $\sim10^5$ quasars are redder than the disk predicted for their
+own mass and Eddington ratio. Fitted to 48 thermal-state RXTE spectra of the
+black hole binary LMC X-3, with its dynamically measured mass, it gives good
+fits (median $\chi^2_\nu=0.79$) with a nearly constant spectral hardening
+factor $f_{\mathrm{col}}=1.81\pm0.09$, close to the theoretical value of
+$\approx1.7$. We discuss the limitations imposed by neglecting
+general-relativistic effects, non-blackbody radiative transfer and additional
+emission components.
 \end{abstract}
 
 \tableofcontents
@@ -101,10 +110,13 @@ questions:
   \item Why does the same physical model put the emission of stellar-mass
         black holes in the X-ray band and that of supermassive black holes
         in the ultraviolet?
+  \item How well does the model describe real observations of quasars and
+        of a stellar-mass black hole?
 \end{enumerate}
 Section~\ref{sec:theory} summarises the physical model,
 Section~\ref{sec:method} describes the numerical method and its validation,
-Section~\ref{sec:results} presents the results, and
+Section~\ref{sec:results} presents the results,
+Section~\ref{sec:observations} compares the model with observations, and
 Section~\ref{sec:discussion} connects them to observables and discusses the
 limitations of the model.
 
@@ -531,6 +543,268 @@ at $i=\ang{30}$) and underestimates it for $i>\ang{60}$.
 \end{figure}
 
 % ===========================================================================
+\section{Comparison with observations}\label{sec:observations}
+% ===========================================================================
+
+We now test the model against three real datasets
+(Table~\ref{tab:obsdata}). Two concern supermassive black holes, through the
+optical--ultraviolet continua of quasars; the third is a stellar-mass black
+hole, through X-ray spectra. All data were downloaded from public archives
+with \texttt{fetch\_observations.py} and analysed with
+\texttt{compare\_observations.py}, both in the \texttt{scripts/} directory.
+
+\begin{table}[H]
+  \centering
+  \caption{Observational data used in this section.}
+  \label{tab:obsdata}
+  \small
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{6.4cm}@{}}
+    \toprule
+    Dataset & Content & Compared with \\
+    \midrule
+    SDSS composite quasar \citep{VandenBerk2001} & median spectrum of 2204 quasars, 800--8555\,\AA &
+      disk spectrum of a typical SDSS quasar \\
+    SDSS DR7 quasar catalogue \citep{Shen2011} & virial $M$, $L/\LEdd$ and continuum slopes of $\sim10^5$ quasars &
+      model slope for each quasar's own $M$ and $L/\LEdd$ \\
+    RXTE/PCA spectra of LMC X-3 (HEASARC) & 65 pointings, 1996--1999, 3--20\,keV &
+      model folded through the detector response, with $M$, $i$, $D$ from \citet{Orosz2014} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{The SDSS composite quasar spectrum}
+\citet{VandenBerk2001} combined 2204 SDSS quasar spectra into a median
+composite. Measured through their continuum windows at 1350--1365 and
+4200--4230\,\AA, the composite has $f_\nu\propto\nu^{\alpha_\nu}$ with
+$\alpha_\nu=-0.47$. The paper quotes $-0.44$ for 1300--5000\,\AA.
+Figure~\ref{fig:obscomposite} compares the composite with the disk spectrum
+of a typical SDSS DR7 quasar, taken as the sample medians
+$M=10^{9.0}\,\Msun$ and $L/\LEdd=0.17$ (so $\Tmax=\SI{5.1e4}{K}$), normalised
+at 1350\,\AA.
+
+For such a disk the spectral peak lies near 1100\,\AA, so the 1350--4200\,\AA\
+range is on the rising side of the peak rather than in the $\nu^{1/3}$
+regime, and the model gives $\alpha_\nu=-0.24$. The disk shape is
+qualitatively right: it has the turnover in the far UV that defines the
+``big blue bump''. However, it is bluer than the composite, and it falls well
+below the composite longward of $\sim4000$\,\AA. There the composite
+steepens to $\alpha_\nu=-2.45$, which \citet{VandenBerk2001} attribute partly
+to host-galaxy starlight, a component the disk model does not include.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{obs1_composite_quasar.png}
+  \caption{SDSS median composite quasar spectrum \citep{VandenBerk2001}
+  (blue) compared with the thin-disk model for the median mass and
+  Eddington ratio of SDSS DR7 quasars (orange line). The shaded band spans
+  the 16--84\% range of $\Tmax$ in that sample. All curves are normalised in
+  the 1350--1365\,\AA\ window. Grey bars mark the two continuum windows; the
+  dashed line is the composite's power-law continuum.}
+  \label{fig:obscomposite}
+\end{figure}
+
+\subsection{Continuum slopes of individual SDSS quasars}
+A more direct test uses individual quasars. For every SDSS DR7 quasar,
+\citet{Shen2011} list a virial black hole mass and an Eddington ratio. They
+also list the slope $\alpha_\lambda$ of a local power-law continuum
+$f_\lambda\propto\lambda^{\alpha_\lambda}$, fitted together with an iron
+template in fixed rest-frame windows around C\,\textsc{iv}
+([1445,1465]+[1700,1705]\,\AA), Mg\,\textsc{ii}
+([2200,2700]+[2900,3090]\,\AA) and H$\beta$ ([4435,4700]+[5100,5535]\,\AA).
+Their Eddington ratios use bolometric corrections from the mean quasar SED
+of \citet{Richards2006}.
+
+For each quasar we compute the slope that the disk model predicts in the
+same windows, given that quasar's $M$ and $L/\LEdd$. For fixed $\rout/\rg$
+the disk spectrum has a universal shape set by $\Tmax$ alone, with
+$\Tmax\propto(\lambda_{\mathrm{Edd}}/M)^{1/4}$. The model slope can
+therefore be tabulated once as a function of $\Tmax$ and interpolated for
+each object. We use non-BAL quasars with slope uncertainty $<0.3$ and median
+S/N$\ge5$ in the line region.
+
+\begin{table}[H]
+  \centering
+  \caption{Observed continuum slopes of SDSS DR7 quasars \citep{Shen2011}
+  compared with the thin-disk prediction for each quasar's own mass and
+  Eddington ratio. Ranges are 16th--84th percentiles; ``obs$-$model'' is
+  the median difference and ``redder'' the fraction of quasars with a larger
+  (redder) $\alpha_\lambda$ than predicted.}
+  \label{tab:slopes}
+  \small
+  \begin{tabular}{@{}lrcccc@{}}
+    \toprule
+    Window & $N$ & observed $\alpha_\lambda$ & model $\alpha_\lambda$ &
+      obs$-$model & redder \\
+    \midrule
+    C\,\textsc{iv} & 19\,020 & $-1.30$ ($-1.74$, $-0.78$) & $-1.32$ ($-1.70$, $-0.78$) & $-0.03$ & 48\% \\
+    Mg\,\textsc{ii} & 65\,594 & $-1.36$ ($-1.71$, $-0.98$) & $-1.86$ ($-2.03$, $-1.60$) & $+0.46$ & 86\% \\
+    H$\beta$ & 16\,472 & $-1.51$ ($-2.03$, $-0.82$) & $-2.14$ ($-2.22$, $-2.00$) & $+0.61$ & 88\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The results (Table~\ref{tab:slopes}, Figure~\ref{fig:obsslopes}) are mixed.
+In the far UV (C\,\textsc{iv}), the observed and predicted distributions
+agree in both median and width. In the near UV and optical, real quasars
+are systematically redder than the disk, by $\Delta\alpha_\lambda\approx0.5$
+(Mg\,\textsc{ii}) and $0.6$ (H$\beta$). The predicted H$\beta$ slopes lie
+close to the $\nu^{1/3}$ limit, $\alpha_\lambda=-7/3$, but the observed ones
+are much shallower and more widely spread.
+
+The lower panels of Figure~\ref{fig:obsslopes} show a second difference. The
+model predicts that the slope should flatten steeply for cooler disks, but
+the observed median slope barely changes with the $\Tmax$ inferred from
+$M$ and $L/\LEdd$. The far-UV agreement in the median is therefore partly a
+coincidence of where the model curve crosses the data.
+
+Several effects not in the model plausibly contribute:
+\begin{itemize}
+  \item dust reddening in the host galaxy;
+  \item host-galaxy starlight in the H$\beta$ windows;
+  \item Balmer-continuum and Fe\,\textsc{ii} emission near Mg\,\textsc{ii};
+  \item the $\sim0.4$\,dex uncertainty of single-epoch virial masses, which
+        blurs any trend with $\Tmax$.
+\end{itemize}
+The model may also be incomplete for AGN disks: its outer regions are
+self-gravitating, and their atmospheres are not blackbodies.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{obs2_quasar_slopes.png}
+  \caption{Top: distributions of the observed continuum slope $\alpha_\lambda$
+  \citep{Shen2011} (filled) and of the thin-disk prediction for the same
+  quasars (outline) in the C\,\textsc{iv}, Mg\,\textsc{ii} and H$\beta$
+  windows. The dotted line marks the $\nu^{1/3}$ limit,
+  $\alpha_\lambda=-7/3$. Bottom: observed median slope (points; shading
+  16--84\%) in bins of the model $\Tmax$ inferred from each quasar's mass and
+  Eddington ratio, compared with the model prediction (line).}
+  \label{fig:obsslopes}
+\end{figure}
+
+\subsection{X-ray spectra of the black hole binary LMC X-3}
+LMC X-3 is a persistent black hole X-ray binary in the Large Magellanic
+Cloud. It is usually in a disk-dominated (thermal) state and has little
+interstellar absorption, which makes it a clean test of thin-disk models.
+Its black hole mass $M=6.98\pm0.56\,\Msun$ and inclination
+$i=69.24\pm0.72^\circ$ were measured dynamically by \citet{Orosz2014}. We
+adopt the LMC distance $D=48.1\pm2.2$\,kpc used for LMC~X-1 by
+\citet{Orosz2009}, as \citet{Steiner2014} did.
+
+\paragraph{Data.} We use the RXTE Proportional Counter Array (PCA)
+standard-product spectra from the HEASARC archive: all 65 pointings of
+1996--1999 with at least 3\,ks of exposure. Each pointing comes with a
+source spectrum, a background spectrum and a response matrix, summed over
+the PCA detectors (effective area $\approx\SI{6400}{cm^2}$ at 8\,keV).
+
+We fit the background-subtracted count rates over 3--20\,keV, adding a 1\%
+systematic error per channel as \citet{Steiner2014} did. The absorbing column
+$N_{\mathrm H}=4\times10^{20}$\,cm$^{-2}$ attenuates the flux by less than
+1\% above 3\,keV, so we neglect it.
+
+\paragraph{Model.} The ring-sum disk of Section~\ref{sec:method} is used with
+$M$, $i$ and $D$ fixed to the values above. Each ring radiates a
+colour-corrected (diluted) blackbody, $f_{\mathrm{col}}^{-4}B_\nu(f_{\mathrm{col}}T)$.
+The hardening factor $f_{\mathrm{col}}$ raises the colour temperature without
+changing the emitted flux \citep{ShimuraTakahara1995}. A power law
+represents the weak Comptonised tail.
+
+The model photon spectrum is folded through each response matrix and
+fitted by least squares. There are four free parameters: $\Mdot$,
+$f_{\mathrm{col}}$, and the power-law normalisation and index. With $\rin$
+fixed at $6\rg$, these determine both the colour temperature and the
+normalisation, $\propto\cos i\,\rin^2/(D^2f_{\mathrm{col}}^4)$, so
+$f_{\mathrm{col}}$ is constrained by the data. Following \citet{Steiner2014},
+we call a spectrum thermal-state if the disk provides more than 75\% of the
+3--20\,keV counts and $\chi^2_\nu<2$. 48 of the 65 spectra qualify.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{obs3_lmcx3_spectrum.png}
+  \caption{RXTE/PCA spectrum of LMC X-3 (obsid 20188-02-21-00, 1997
+  December 12) with the best-fitting thin disk plus power law
+  ($f_{\mathrm{col}}$ free, blue) and with $f_{\mathrm{col}}=1.7$ fixed
+  (orange). The lower panel shows the residuals.}
+  \label{fig:obsspec}
+\end{figure}
+
+\paragraph{Results.} Figure~\ref{fig:obsspec} shows a representative fit.
+With $f_{\mathrm{col}}$ free, the model describes the thermal-state spectra
+well, with median $\chi^2_\nu=0.79$. The fitted Eddington ratios span
+$L/\LEdd\approx0.16$--$0.87$; these are model-dependent, as discussed below.
+The required hardening factor is remarkably stable from spectrum to spectrum
+(Figure~\ref{fig:obspop}a):
+\begin{equation}
+  f_{\mathrm{col}}=1.81\ \ (\text{16--84\%: }1.78\text{--}1.83)\ \pm0.09\ (\text{syst.}).
+\end{equation}
+The systematic error is obtained by refitting all thermal-state spectra
+with $M$, $D$ and $i$ each shifted by $\pm1\sigma$
+(Table~\ref{tab:fcolsyst}); the mass dominates. This value agrees with the
+theoretical $f_{\mathrm{col}}\approx1.7$ of \citet{ShimuraTakahara1995}.
+
+Fixing $f_{\mathrm{col}}=1.7$ raises the median $\chi^2_\nu$ to 3.3, mainly
+because the model's temperature and normalisation cannot then be adjusted
+independently. Pure blackbody rings ($f_{\mathrm{col}}=1$) are strongly
+excluded (median $\chi^2_\nu=117$), which directly demonstrates the
+spectral hardening discussed in Section~\ref{sec:discussion}.
+
+The bolometric disk flux scales as $F\propto T_{\mathrm{col}}^{4.4}$
+(Figure~\ref{fig:obspop}b), close to the $F\propto T^4$ expected if the inner
+disk edge stays at a fixed radius. This reproduces the result, found with
+relativistic models, that the inner disk of LMC X-3 sits at a stable
+radius, identified with the ISCO \citep{Steiner2014}.
+
+\begin{table}[H]
+  \centering
+  \caption{Median fitted $f_{\mathrm{col}}$ of the 48 thermal-state spectra
+  when the adopted system parameters are varied by $\pm1\sigma$.}
+  \label{tab:fcolsyst}
+  \small
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Parameter & $-1\sigma$ & fiducial & $+1\sigma$ \\
+    \midrule
+    $M$ ($6.98\pm0.56\,\Msun$) & 1.732 & 1.806 & 1.877 \\
+    $D$ ($48.1\pm2.2$\,kpc) & 1.848 & 1.806 & 1.766 \\
+    $i$ ($69.24\pm0.72^\circ$) & 1.820 & 1.806 & 1.790 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{obs4_lmcx3_population.png}
+  \caption{Fits to 65 RXTE/PCA spectra of LMC X-3. (a) Fitted hardening
+  factor versus fitted Eddington ratio. Blue: thermal-state spectra (with
+  $1\sigma$ errors); orange: other spectra. The dashed line is the
+  thermal-state median, and the grey band the theoretical range. (b)
+  Bolometric disk flux versus colour temperature $f_{\mathrm{col}}k\Tmax$,
+  with the $F\propto T^4$ relation for a constant inner radius.}
+  \label{fig:obspop}
+\end{figure}
+
+\paragraph{Caveats.} The fitted luminosities depend on the Newtonian
+efficiency ($\eta=1/12$) and on the neglect of relativistic effects, which
+are important at $i\approx\ang{69}$. They should be taken as indicative.
+For comparison, \citet{Steiner2014}, using the fully relativistic
+\textsc{kerrbb2} model, found that only 391 of their 1454 thermal-state
+spectra lay in the range $L/\LEdd=0.05$--0.3, so LMC X-3 is frequently more
+luminous than that. Our $f_{\mathrm{col}}$ likewise absorbs any shortcomings
+of the Newtonian model, as well as the PCA flux calibration (the Crab-based
+correction of \citet{Steiner2014} would change it by $\sim$2--3\%). It is
+therefore an effective hardening factor rather than a pure measurement of
+disk-atmosphere physics.
+
+\subsection{What the comparisons show}
+The stellar-mass case is a success. With an independently measured mass,
+the model reproduces the X-ray spectra of LMC X-3 over a range of
+luminosities with a single, physically sensible hardening factor. The
+quasar case is only a partial success. The disk explains the existence and
+far-UV location of the big blue bump, but real quasar continua are redder
+in the near-UV and optical than a bare thin disk. Explaining that difference
+requires components and effects outside the model
+(Section~\ref{sec:discussion}).
+
+% ===========================================================================
 \section{Discussion}\label{sec:discussion}
 % ===========================================================================
 
@@ -589,15 +863,19 @@ brighter in their high-energy tail than our $\cos i$ scaling predicts.
 stellar-mass disks electron scattering dominates over absorption, so the
 emergent spectrum is a diluted, hardened blackbody, usually described by a
 colour-correction factor $f_{\mathrm{col}}\approx1.7$
-\citep{ShimuraTakahara1995}. Atomic absorption edges and limb darkening also
-modify the local spectra, particularly in AGN disks.
+\citep{ShimuraTakahara1995}. Our fits to LMC X-3 confirm this directly:
+pure blackbody rings are excluded, and $f_{\mathrm{col}}\approx1.8$ is
+required (Section~\ref{sec:observations}). Atomic absorption edges and limb
+darkening also modify the local spectra, particularly in AGN disks.
 
 \paragraph{Additional emission components.} Real spectra contain components
 beyond the thermal disk: a hot, Comptonising corona that produces power-law
 X-ray emission; reflection features such as the Fe\,K$\alpha$ line;
 synchrotron emission from jets; reprocessing of X-rays in the outer disk
 (irradiation); and emission from the companion star, the broad-line region,
-the dusty torus and the host galaxy.
+the dusty torus and the host galaxy. Some of these, together with dust
+reddening, are the likely reason that observed quasar continua are redder
+than the model in the near-UV and optical (Section~\ref{sec:observations}).
 
 \paragraph{Range of validity of the thin-disk solution.} The assumption
 $H/r\ll1$ breaks down as $L$ approaches $\LEdd$, where radiation pressure
@@ -638,6 +916,14 @@ findings are:
   \item For an observer, the flux scales as $\cos i/D^2$, and assuming
         isotropic emission biases the inferred luminosity by a factor of
         $2\cos i$.
+  \item Compared with real quasars, the disk matches the average far-UV
+        continuum slope of SDSS quasars. In the near-UV and optical,
+        86--88\% of quasars are redder than the disk predicted for their own
+        mass and Eddington ratio, by $\Delta\alpha_\lambda\approx0.5$--0.6.
+  \item Fitted to 48 thermal-state RXTE spectra of LMC X-3 with its
+        dynamically measured mass, the model gives good fits with a nearly
+        constant hardening factor $f_{\mathrm{col}}=1.81\pm0.09$. This is
+        consistent with theory, and pure blackbody emission is excluded.
 \end{enumerate}
 The most important extensions of this work would be to include the
 relativistic Novikov--Thorne temperature profile with black hole spin,
@@ -655,8 +941,11 @@ All results in this report can be reproduced from the project repository:
 \begin{tabular}{@{}ll@{}}
   \texttt{accretion\_disk/disk.py} & \texttt{ThinDisk} (agnpy \texttt{SSDisk} + ring sum) \\
   \texttt{scripts/run\_analysis.py} & generates all figures and \texttt{results/summary.csv} \\
-  \texttt{tests/test\_disk.py} & validation tests (\texttt{python -m pytest}) \\
+  \texttt{tests/} & validation tests (\texttt{python -m pytest}) \\
   \texttt{notebooks/accretion\_disk\_walkthrough.ipynb} & step-by-step walkthrough \\
+  \texttt{scripts/fetch\_observations.py} & downloads the observational data \\
+  \texttt{scripts/compare\_observations.py} & comparisons of Section~\ref{sec:observations} \\
+  \texttt{data/observations/} & the observational data and their provenance \\
 \end{tabular}
 \end{center}
 The code requires Python~3 with \texttt{numpy}, \texttt{scipy},

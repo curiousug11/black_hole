@@ -38,12 +38,15 @@ accretion_disk/      Python package: the disk model
   disk.py            ThinDisk: agnpy SSDisk + astropy BlackBody + ring integration
 scripts/
   run_analysis.py    Parameter study: writes every figure and table
+  fetch_observations.py    Downloads the observational data (see data/observations/)
+  compare_observations.py  Compares the model with quasar and X-ray binary data
+data/observations/   Real data: SDSS quasars and RXTE spectra of LMC X-3 (with provenance README)
 notebooks/
   accretion_disk_walkthrough.ipynb   Step-by-step walkthrough of the analysis
 report/
   report.tex         LaTeX report (with references.bib)
   report.pdf         Compiled report
-tests/test_disk.py   Physics and numerical checks (pytest)
+tests/               Physics, numerical and data-handling checks (pytest)
 figures/             Generated figures (PNG)
 results/             Generated summary tables (CSV and Markdown)
 ```
@@ -52,8 +55,10 @@ results/             Generated summary tables (CSV and Markdown)
 
 ```bash
 pip install -r requirements.txt
-python -m pytest              # 22 tests, about 6 s
+python -m pytest              # 26 tests, about 6 s
 python scripts/run_analysis.py  # regenerates figures/ and results/, about 1 min
+python scripts/fetch_observations.py     # downloads the observational data (~10 MB; already committed)
+python scripts/compare_observations.py   # comparison with observations, about 1.5 min
 jupyter lab notebooks/accretion_disk_walkthrough.ipynb   # guided walkthrough
 cd report && latexmk -pdf report.tex                     # rebuild the report PDF
 ```
@@ -183,6 +188,67 @@ peak of $\nu L_\nu$.
    100 rings give 0.2% accuracy in luminosity. The default 2000 rings give
    < 1e-5.
 
+## Comparison with observations
+
+`scripts/compare_observations.py` tests the model against three real datasets
+(details and provenance in `data/observations/README.md`; numbers in
+`results/observations_summary.md`).
+
+**1. SDSS composite quasar spectrum** (Vanden Berk et al. 2001; 2,204 quasars;
+`figures/obs1_composite_quasar.png`). Between 1350 and 4200 Å the composite
+continuum has $\alpha_\nu = -0.47$ ($f_\nu\propto\nu^{\alpha_\nu}$; the paper
+quotes $-0.44$). The thin disk of a median SDSS DR7 quasar
+($M = 10^{9.0}\,M_\odot$, $L/L_{Edd} = 0.17$, $T_{max} = 5\times10^4$ K) gives
+$\alpha_\nu = -0.24$. Its peak lies near 1100 Å, so this range is not yet in
+the $\nu^{1/3}$ regime. The model is bluer than the data, and the gap widens
+towards the optical, where the composite also contains host-galaxy light.
+
+**2. Continuum slopes of SDSS DR7 quasars** (Shen et al. 2011;
+`figures/obs2_quasar_slopes.png`). For each quasar, the model slope
+$\alpha_\lambda$ is computed for its own virial mass and Eddington ratio, in
+the same continuum windows as the measured slope:
+
+| Window | Quasars | Observed median $\alpha_\lambda$ | Model median | Redder than model |
+|---|---|---|---|---|
+| C IV (1450–1705 Å) | 19,020 | −1.30 | −1.32 | 48% |
+| Mg II (2200–3090 Å) | 65,594 | −1.36 | −1.86 | 86% |
+| Hβ (4435–5535 Å) | 16,472 | −1.51 | −2.14 | 88% |
+
+The thin disk matches the far-UV slope on average. In the near-UV and optical,
+however, real quasars are systematically redder than the disk predicts, by
+0.5–0.6 in $\alpha_\lambda$. The model also predicts a strong trend of slope
+with $T_{max}$ that the data do not show: observed slopes are nearly
+independent of $T_{max}$. This is the well-known problem that quasar
+continua are redder than simple thin-disk spectra. Plausible contributors are
+dust reddening, host-galaxy light at Hβ, Balmer-continuum and Fe II emission
+near Mg II, and uncertainties of ~0.4 dex in the virial masses.
+
+**3. X-ray spectra of the black hole binary LMC X-3** (RXTE/PCA, 65 pointings
+in 1996–1999; `figures/obs3_lmcx3_spectrum.png`,
+`figures/obs4_lmcx3_population.png`). The model is folded through the PCA
+response and fitted over 3–20 keV, with the published mass, inclination and
+distance held fixed (6.98 M☉, 69.24°, 48.1 kpc). Each ring radiates a
+colour-corrected blackbody $f_{col}^{-4}B_\nu(f_{col}T)$, a power law is added
+for the weak Comptonised tail, and the accretion rate and $f_{col}$ are fitted.
+* 48 spectra are thermal-state (disk > 75% of counts, $\chi^2_\nu < 2$). They
+  are fitted well, with median $\chi^2_\nu = 0.79$.
+* They need $f_{col} = 1.81$, nearly constant (16–84%: 1.78–1.83) over the
+  fitted luminosity range $L/L_{Edd} \approx 0.16$–$0.87$. The systematic
+  uncertainty from $M$, $D$ and $i$ is ±0.09. This agrees with the theoretical
+  hardening factor of ~1.7 (Shimura & Takahara 1995).
+* Fixing $f_{col} = 1.7$ worsens the fits (median $\chi^2_\nu = 3.3$). Pure
+  blackbody rings ($f_{col} = 1$) are strongly ruled out (median
+  $\chi^2_\nu = 117$).
+* The disk flux scales as $T_{col}^{4.4}$, close to the $T^4$ expected for a
+  disk whose inner edge stays at a fixed radius (the ISCO).
+
+So the Newtonian thin disk, given the dynamically measured mass, reproduces
+the X-ray spectra of a real stellar-mass black hole with a physically sensible
+spectral hardening factor. The fitted luminosities depend on the omitted
+relativistic effects and the Newtonian efficiency, so they are only
+indicative. Steiner et al. (2014), using a fully relativistic model, likewise
+find LMC X-3 frequently above 30% of Eddington.
+
 ## Limitations
 
 The model shows the main physics, but it leaves out several effects that
@@ -229,3 +295,9 @@ matter when comparing to real data:
 * Astropy Collaboration (2022), *ApJ*, 935, 167 — astropy (constants, `BlackBody`).
 * Mitsuda, K., et al. (1984), *PASJ*, 36, 741 — the multi-colour disk (XSPEC `diskbb`).
 * Zimmerman, E. R., et al. (2005), *ApJ*, 618, 832 — zero-torque multi-colour disk (XSPEC `ezdiskbb`).
+* Vanden Berk, D. E., et al. (2001), *AJ*, 122, 549 — SDSS composite quasar spectrum.
+* Shen, Y., et al. (2011), *ApJS*, 194, 45 — SDSS DR7 quasar properties catalogue.
+* Richards, G. T., et al. (2006), *ApJS*, 166, 470 — quasar SEDs and bolometric corrections.
+* Orosz, J. A., et al. (2014), *ApJ*, 794, 154 — mass and inclination of LMC X-3.
+* Orosz, J. A., et al. (2009), *ApJ*, 697, 573 — LMC distance adopted for LMC X-3.
+* Steiner, J. F., et al. (2014), *ApJL*, 793, L29 — continuum fitting of RXTE spectra of LMC X-3.
