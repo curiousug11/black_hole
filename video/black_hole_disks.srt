@@ -1,0 +1,385 @@
+1
+00:00:00,000 --> 00:00:05,041
+Black holes are, by definition, dark.
+Nothing that crosses the event horizon
+
+2
+00:00:05,041 --> 00:00:10,539
+ever comes back out. And yet the regions
+around black holes are among the brightest
+
+3
+00:00:10,539 --> 00:00:12,045
+places in the universe.
+
+4
+00:00:12,367 --> 00:00:17,160
+The light doesn't come from the black hole
+itself. It comes from gas spiraling
+
+5
+00:00:17,160 --> 00:00:21,287
+inward, in a flattened, glowing structure
+called an accretion disk.
+
+6
+00:00:21,467 --> 00:00:26,891
+Here is the puzzle we'll unpack. Disks
+around small black holes, a few times the
+
+7
+00:00:26,891 --> 00:00:32,382
+mass of the Sun, shine mostly in X-rays.
+Disks around supermassive black holes, a
+
+8
+00:00:32,382 --> 00:00:37,738
+hundred million times heavier, shine
+mostly in ultraviolet light. Same physics,
+
+9
+00:00:37,738 --> 00:00:39,212
+different colors. Why?
+
+10
+00:00:41,000 --> 00:00:46,417
+Let's build the simplest model that could
+possibly work. Picture the disk as a thin,
+
+11
+00:00:46,417 --> 00:00:50,495
+flat sheet of gas, orbiting the black hole
+in concentric rings.
+
+12
+00:00:50,867 --> 00:00:55,976
+As gas drifts inward, friction between
+neighboring rings turns gravitational
+
+13
+00:00:55,976 --> 00:01:00,887
+energy into heat, and each ring radiates
+that heat away from its surface.
+
+14
+00:01:01,267 --> 00:01:06,507
+Balancing the energy released at each
+radius against the energy radiated gives
+
+15
+00:01:06,507 --> 00:01:08,762
+the local temperature of the disk.
+
+16
+00:01:09,100 --> 00:01:14,181
+Far from the black hole, the bracket is
+close to one, so the temperature falls off
+
+17
+00:01:14,181 --> 00:01:18,956
+like r to the minus three quarters. But
+the disk ends at the innermost stable
+
+18
+00:01:18,956 --> 00:01:21,895
+orbit, and there the temperature drops to
+zero.
+
+19
+00:01:22,233 --> 00:01:27,531
+So the hottest gas sits just outside the
+inner edge, at forty-nine thirty-sixths of
+
+20
+00:01:27,531 --> 00:01:28,603
+the inner radius.
+
+21
+00:01:30,400 --> 00:01:35,439
+How does a disk like this look spectrally?
+The key assumption is that the disk is
+
+22
+00:01:35,439 --> 00:01:40,170
+optically thick, so each ring glows like a
+blackbody at its own temperature.
+
+23
+00:01:40,500 --> 00:01:46,336
+A hot inner ring peaks at high frequency.
+A cool outer ring peaks at low frequency,
+
+24
+00:01:46,336 --> 00:01:48,420
+but it has a much larger area.
+
+25
+00:01:48,767 --> 00:01:54,357
+Add them all up, ring by ring, and you get
+something no single blackbody can produce:
+
+26
+00:01:54,357 --> 00:01:56,437
+a broad, stretched-out spectrum.
+
+27
+00:01:56,767 --> 00:02:02,233
+At low frequencies every ring is in its
+Rayleigh-Jeans tail, so the spectrum rises
+
+28
+00:02:02,233 --> 00:02:07,830
+like nu squared. At high frequencies it is
+cut off exponentially by the hottest gas.
+
+29
+00:02:07,830 --> 00:02:13,165
+And in between, the overlapping rings
+combine into a gentle power law, nu to the
+
+30
+00:02:13,165 --> 00:02:16,787
+one third: the signature of a multi-
+temperature disk.
+
+31
+00:02:18,567 --> 00:02:23,377
+Here's where it gets interesting. The
+temperature scale of the disk depends on
+
+32
+00:02:23,377 --> 00:02:28,309
+just one combination: the accretion rate
+divided by the mass squared, to the one
+
+33
+00:02:28,309 --> 00:02:29,162
+quarter power.
+
+34
+00:02:29,500 --> 00:02:34,536
+Compare black holes feeding at the same
+fraction of their Eddington limit, and the
+
+35
+00:02:34,536 --> 00:02:39,694
+accretion rate grows in proportion to the
+mass. So the temperature goes like mass to
+
+36
+00:02:39,694 --> 00:02:43,395
+the minus one quarter. Bigger black holes
+have cooler disks.
+
+37
+00:02:43,733 --> 00:02:49,537
+Watch the spectrum as we dial up the mass.
+The disk becomes vastly more luminous, but
+
+38
+00:02:49,537 --> 00:02:52,978
+its peak slides steadily toward lower
+frequencies.
+
+39
+00:02:53,167 --> 00:02:58,600
+A ten solar mass black hole peaks near one
+kilo-electron-volt, in soft X-rays. A
+
+40
+00:02:58,600 --> 00:03:03,497
+hundred million solar mass black hole
+peaks near seven hundred and forty
+
+41
+00:03:03,497 --> 00:03:08,997
+angstroms, in the far ultraviolet. The
+ratio is ten million to the one quarter: a
+
+42
+00:03:08,997 --> 00:03:12,687
+factor of fifty-six. Same equations,
+different colors.
+
+43
+00:03:13,033 --> 00:03:18,675
+Changing the accretion rate does something
+different. The luminosity rises in direct
+
+44
+00:03:18,675 --> 00:03:23,985
+proportion, but the peak barely moves: a
+hundredfold increase shifts it by only
+
+45
+00:03:23,985 --> 00:03:25,578
+about a factor of three.
+
+46
+00:03:27,367 --> 00:03:32,439
+What does a telescope actually see? Tilt
+the disk away from us, and its projected
+
+47
+00:03:32,439 --> 00:03:37,203
+area shrinks by the cosine of the
+inclination. Move it farther away, and the
+
+48
+00:03:37,203 --> 00:03:39,987
+flux falls as one over the distance
+squared.
+
+49
+00:03:40,333 --> 00:03:46,041
+The observer sees the same spectral shape,
+just scaled down. Assume the disk shines
+
+50
+00:03:46,041 --> 00:03:51,342
+equally in all directions, and you
+misjudge its luminosity by a factor of two
+
+51
+00:03:51,342 --> 00:03:51,953
+cosine i.
+
+52
+00:03:53,733 --> 00:03:58,753
+To compute all of this, we take the
+temperature profile from the published
+
+53
+00:03:58,753 --> 00:04:03,438
+agnpy package, use astropy's blackbody
+function, and sum two thousand
+
+54
+00:04:03,438 --> 00:04:05,378
+logarithmically spaced rings.
+
+55
+00:04:05,700 --> 00:04:10,805
+The total luminosity matches the exact
+formula to a few parts in a million, and
+
+56
+00:04:10,805 --> 00:04:14,570
+the error shrinks as one over the number
+of rings squared.
+
+57
+00:04:16,367 --> 00:04:21,155
+The real test, of course, is nature.
+First, quasars: this is the average
+
+58
+00:04:21,155 --> 00:04:26,337
+spectrum of more than two thousand of
+them, from the Sloan Digital Sky Survey.
+
+59
+00:04:26,667 --> 00:04:32,082
+A thin disk for a typical quasar captures
+the overall shape, the big blue bump
+
+60
+00:04:32,082 --> 00:04:37,839
+rising into the far ultraviolet. But the
+real spectrum is redder, especially toward
+
+61
+00:04:37,839 --> 00:04:38,662
+the optical.
+
+62
+00:04:39,000 --> 00:04:43,956
+Go further, with a hundred thousand
+individual quasars. For each one, predict
+
+63
+00:04:43,956 --> 00:04:49,165
+the continuum slope from its own mass and
+accretion rate. In the far ultraviolet,
+
+64
+00:04:49,165 --> 00:04:54,057
+the model matches on average. In the
+optical, almost nine out of ten quasars
+
+65
+00:04:54,057 --> 00:04:59,267
+are redder than a bare disk. Something
+else is in the mix: dust, the host galaxy,
+
+66
+00:04:59,267 --> 00:05:00,220
+extra emission.
+
+67
+00:05:00,567 --> 00:05:06,506
+Now a stellar-mass black hole: LMC X-3, in
+the Large Magellanic Cloud. Its mass,
+
+68
+00:05:06,506 --> 00:05:12,299
+distance and inclination are measured
+independently. We fold the model through
+
+69
+00:05:12,299 --> 00:05:17,578
+the X-ray detector's response and fit
+forty-eight spectra from the RXTE
+
+70
+00:05:17,578 --> 00:05:18,312
+satellite.
+
+71
+00:05:18,633 --> 00:05:23,689
+It fits beautifully, but only if each
+ring's light is hardened: it looks like a
+
+72
+00:05:23,689 --> 00:05:28,808
+blackbody about one point eight times
+hotter, then diluted. That is exactly what
+
+73
+00:05:28,808 --> 00:05:33,926
+electron scattering in a disk atmosphere
+is predicted to do. A pure blackbody is
+
+74
+00:05:33,926 --> 00:05:35,253
+ruled out completely.
+
+75
+00:05:37,033 --> 00:05:42,539
+So a handful of ideas, energy balance,
+blackbody rings and a fourth-root scaling,
+
+76
+00:05:42,539 --> 00:05:48,045
+explain why the same physics paints small
+black holes in X-rays and giant ones in
+
+77
+00:05:48,045 --> 00:05:49,253
+ultraviolet light.
+
+78
+00:05:49,600 --> 00:05:54,322
+The model leaves things out: general
+relativity, black hole spin, the hot
+
+79
+00:05:54,322 --> 00:05:59,810
+corona, and the messy surroundings of real
+quasars. But that is what makes it useful.
+
+80
+00:05:59,810 --> 00:06:03,320
+Where it fails tells us exactly what else
+is going on.
+
